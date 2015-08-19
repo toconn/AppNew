@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Build.Exec" default="done">
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+	
+	<import file="App.Properties.xml" />
+	
+	<target name="copy">
+		<copy file="${Release}\${AppName}.${AppExtension}" tofile="${ExeDir}\${AppName}.${AppExtension}" overwrite="yes" />
+	</target>
+		
+	<target depends="copy" name="done">
+		<echo message="${ExeDir}\${AppName}.${AppExtension}" />
+		<echo message="Exe updated." />
+	</target>
+
+</project>

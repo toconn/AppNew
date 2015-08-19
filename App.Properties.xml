@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="App.Properties">
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+
+
+	<property name="AppName"            value="AppNew"            />
+	<property name="AppExtension"       value="jarc"              />
+
+	<property name="Version"            value="v 01.00.04"        />
+
+	<property name="ExeDir"             location="/Users/Tadhg/Apps/Tadhg.Scripts"    />
+	
+
+	<property name="hasSourceShared"	value="1"                  />
+	<property name="hasSourceTest"      value="0"                  />
+	
+	<property name="includeLibs"        value="1"                  />
+	
+	<property name="hasLibsApp"         value="0"                  />
+	<property name="hasLibsShared"      value="1"                  />
+	<property name="hasLibsTest"        value="0"                  />
+	
+	<property name="hasResourceApp"		value="0"                  />
+	<property name="hasResourceShared"	value="0"                  />
+	<property name="hasResourceTest"	value="0"                  />	
+
+	
+	<property name="SourceApp"          location="Source/Main/Java"   />
+	<property name="SourceCore"         location="Source/Core/Java"   />
+	<property name="SourceShared"       location="Source/Shared/Java" />
+	
+	<property name="LibsApp"            location="Libs.App"           />
+	<property name="LibsShared"         location="Source/Libs/Java"   />
+	<property name="LibsTest"           location="Libs.Test"          />
+
+	<property name="ResourceApp"        location="Resource.App"    />
+	<property name="ResourceShared"     location="Resource.Shared" />
+	
+	<property name="Build"              location="Build/Classes"   />
+	<property name="Manifest"           location="Source/Main/Resources/Manifest"  />
+	<property name="Release"            location="Build/Release"   />
+	<property name="BackupDir"          location="..\..\.."        />
+	
+	<!--
+		<if><or><equals arg1="${hasLibsApp}" arg2="1" /><equals arg1="${hasLibsShared}" arg2="1" /><equals arg1="${hasLibsTest}" arg2="1" /></or>
+			<then>
+				<property name="hasLibs"            value="1"         />
+			</then>
+			<else>
+				<property name="hasLibs"            value="0"         />
+			</else>
+		</if>
+	-->
+	
+	<property name="hasLibs"            value="1"         />
+		
+	
+</project>

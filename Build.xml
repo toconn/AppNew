@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Build" default="done">
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+
+	<import file="App.Properties.xml" />
+	
+	
+	
+    <path id="classpath">
+
+    	<fileset dir="${LibsShared}" includes="**/*.jar"/>
+ 
+    </path>
+		
+
+	<target name="clear">
+
+		<delete dir="${Release}"/>
+		<delete dir="${Build}"/>
+
+	</target>
+
+
+	<target name="setup" depends="clear">
+		
+		<mkdir dir="${Release}"/>
+		<mkdir dir="${Build}" />
+		
+	</target>
+
+
+	<target name="compile" depends="setup">
+
+		<javac destdir="${Build}">
+		
+			<src path="${SourceApp}"  />
+			<src path="${SourceCore}" />			
+			<src path="${SourceShared}" />
+			<classpath refid="classpath" />
+
+		</javac>
+
+	</target>
+
+
+	<target name="release" depends="compile">
+		
+		<jar basedir="${Build}" destfile="${Release}/${AppName}.${AppExtension}" manifest="${Manifest}/MANIFEST.MF">			
+			<zipgroupfileset dir="Libs" includes="*.jar" /> 
+		</jar>
+
+	</target>
+	
+	
+	<target name="done" depends="release"> 
+		<echo message="Build of version ${Version} complete." />
+	</target>
+	
+</project>

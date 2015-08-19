@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Build.Backup" default="done">
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+
+	<import file="App.Properties.xml" />
+
+
+	<target name="clear">
+		
+        <delete dir="${BackupDir}/${Version}" />
+
+	</target>
+
+
+	<target name="setup" depends="clear">
+		
+		<mkdir dir="${BackupDir}/${Version}/Source"          />
+		<mkdir dir="${BackupDir}/${Version}/Scripts"         />
+		<mkdir dir="${BackupDir}/${Version}/Build/Manifest"  />
+		<mkdir dir="${BackupDir}/${Version}/Executables"     />
+
+		<if><equals arg1="${hasSourceTest}" arg2="1" /><then>
+			<mkdir dir="${BackupDir}/${Version}/Source - Test" />
+		</then></if>
+		
+		<if><equals arg1="${hasLibraries}" arg2="1" /><then>
+			<mkdir dir="${BackupDir}/${Version}/Jars" />
+		</then></if>
+		
+	</target>
+
+
+	<target name="backup" depends="setup">
+		
+		<copy todir="${BackupDir}/${Version}/Source">
+		    <fileset dir="${Source}" />
+		</copy>
+		
+		<copy todir="${BackupDir}/${Version}/Build/Manifest">
+		    <fileset dir="${Manifest}" />
+		</copy>
+		
+		<copy todir="${BackupDir}/${Version}/Executables">
+		    <fileset dir="${Release}" />
+		</copy>
+		
+		<copy todir="${BackupDir}/${Version}/Scripts">
+		    <fileset dir=".">
+		    	<include name="*.xml" />
+		    </fileset>
+		</copy>
+		
+		<if><equals arg1="${hasSourceTest}" arg2="1" /><then>
+			
+			<copy todir="${BackupDir}/${Version}/Source - Test">
+			    <fileset dir="${SourceTest}" />
+			</copy>
+				
+		</then></if>
+		
+		<if><equals arg1="${hasLibraries}" arg2="1" /><then>
+			
+			<copy todir="${BackupDir}/${Version}/Jars">
+			    <fileset dir="${Libraries}" />
+			</copy>
+			
+		</then></if>
+		
+	</target>
+
+
+	<target name="done" depends="backup">
+	
+		<echo message="Backup of version ${Version} complete." />
+	
+	</target>
+
+</project>
