@@ -7,7 +7,7 @@ import ua.core.util.*;
 public class AppService {
 	
 	
-	public static StringList getAppInfoDescriptionStringList () {
+	public static StringList getAppInfoDescriptionStringList() {
 		
 		return getAppInfoDescriptionStringList (AppStore.appInfo.getKeyMaxSize() + 2);
 	}
@@ -26,7 +26,7 @@ public class AppService {
 		// Code:
 		////////////////////////////////////////////////////////////////// LanguageController.getFormattedMessage (null, 
 		
-		descriptionStringList = new StringList ();
+		descriptionStringList = new StringList();
 
 		descriptionStringList.add (StringUtils.padString (MessageService.getFormattedMessage (null, new Message ("", "Name")),			' ', keyPaddingLength) + AppStore.appInfo.getProperty (IAppConst.APP_NAME));
 		descriptionStringList.add (StringUtils.padString (MessageService.getFormattedMessage (null, new Message ("", "Version")),		' ', keyPaddingLength) + AppStore.appInfo.getProperty (IAppConst.APP_VERSION));
@@ -67,7 +67,7 @@ public class AppService {
 		// Code:
 		//////////////////////////////////////////////////////////////////
 		
-		descriptionStringList = new StringList ();
+		descriptionStringList = new StringList();
 		
 		hasHelpAll = (paramMap.containsKey (IAppConst.PARAM_HELP_ALL));
 		
@@ -343,7 +343,7 @@ public class AppService {
 		
 		displayStringList = getHelpDescriptionStringList (paramMap);
 		
-		if (displayStringList != null && displayStringList.size () > 0) {
+		if (displayStringList != null && displayStringList.size() > 0) {
 			
 			AppUI.print (displayStringList);
 		}

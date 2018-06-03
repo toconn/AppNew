@@ -94,8 +94,8 @@ public class ValidationUtils {
 
 			else {
 				
-				expVal3 = expVal1.cloneMe ();
-				expVal3.addMessageList (expVal2.getMessageList ());
+				expVal3 = expVal1.cloneMe();
+				expVal3.addMessageList (expVal2.getMessageList());
 				
 				return expVal3;
 			}

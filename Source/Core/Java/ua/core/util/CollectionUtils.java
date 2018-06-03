@@ -247,9 +247,9 @@ public class CollectionUtils {
 	
 		for (StringList stringList : stringListList) {
 			
-			if (stringList != null && columnCount < stringList.size ()) {
+			if (stringList != null && columnCount < stringList.size()) {
 				
-				columnCount = stringList.size ();
+				columnCount = stringList.size();
 			}
 		}
 		
@@ -339,7 +339,7 @@ public class CollectionUtils {
 		// Code:
 		///////////////////////////////////////////////////////////////////////
 
-		keyList = new StringList ();
+		keyList = new StringList();
 		
 		for (String key : map.keySet()) {
 			
@@ -365,7 +365,7 @@ public class CollectionUtils {
 		// Code:
 		///////////////////////////////////////////////////////////////////////
 
-		keyList = new StringList ();
+		keyList = new StringList();
 		
 		for (String key : properties.stringPropertyNames()) {
 			
@@ -380,25 +380,25 @@ public class CollectionUtils {
 	
 	public static boolean isEmpty (Collection <?> collection) {
 		
-		return (collection == null || collection.size () < 1);
+		return (collection == null || collection.size() < 1);
 	}
 
 
 	public static boolean isEmpty (HashMap <?, ?> map) {
 		
-		return (map == null || map.size () < 1);
+		return (map == null || map.size() < 1);
 	}
 	
 	
 	public static boolean isEmpty (StringList list) {
 		
-		return (list == null || list.size () < 1);
+		return (list == null || list.size() < 1);
 	}
 
 
 	public static boolean isEmpty (UaMap <?> map) {
 		
-		return (map == null || map.size () < 1);
+		return (map == null || map.size() < 1);
 	}
 	
 	
@@ -442,7 +442,7 @@ public class CollectionUtils {
 
 		// Collect Command Data...
 		
-		stringListArrayList = new ArrayList <StringList> ();
+		stringListArrayList = new ArrayList <StringList>();
 		
 		for (NVStringPair nvPair : nvPairArrayList) {
 			

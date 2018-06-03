@@ -4,7 +4,7 @@ import ua.core.util.*;
 
 public class DebugService {
 	
-	public static void printSystemSettings () {
+	public static void printSystemSettings() {
 		
 		///////////////////////////////////////////////////////////////////////
 		// Declarations:
@@ -19,7 +19,7 @@ public class DebugService {
 		// Code:
 		///////////////////////////////////////////////////////////////////////
 		
-		SystemSettingsList		= new StringList ();
+		SystemSettingsList		= new StringList();
 		SystemSettingsKeyList	= CollectionUtils.getSortedKeyList (System.getProperties());
 		
 		propertyLengthMax		= StringUtils.getMaxStringLength(System.getProperties().stringPropertyNames()) + 2;

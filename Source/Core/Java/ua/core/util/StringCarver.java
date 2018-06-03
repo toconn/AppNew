@@ -28,7 +28,7 @@ public class StringCarver {
 		
 		this.string = string;
 		
-		resetPointers ();
+		resetPointers();
 		
 		if (StringUtils.isEmpty (this.string))
 			
@@ -49,13 +49,13 @@ public class StringCarver {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 		
-		if (! isEmpty ()) {
+		if (! isEmpty()) {
 
 			index = this.string.lastIndexOf (matchText);
 			
 			if ((index == -1) || isCrossed (this.indexStart, index))
 					
-				markEmpty ();
+				markEmpty();
 			
 			else
 				
@@ -78,13 +78,13 @@ public class StringCarver {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 
-		if (! isEmpty ()) {
+		if (! isEmpty()) {
 
 			index = this.string.lastIndexOf (matchText, this.indexEnd);
 		
 			if ((index == -1) || isCrossed (this.indexStart, index))
 					
-				markEmpty ();
+				markEmpty();
 			
 			else
 				
@@ -100,7 +100,7 @@ public class StringCarver {
 	}
 	
 	
-	private void markEmpty () {
+	private void markEmpty() {
 		
 		this.isEmpty = true;
 	}
@@ -119,17 +119,17 @@ public class StringCarver {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 
-		if (! isEmpty ()) {
+		if (! isEmpty()) {
 
 			index = this.string.indexOf (matchText);
 		
-			if (index == -1 || isCrossed (index + matchText.length (), this.indexEnd))
+			if (index == -1 || isCrossed (index + matchText.length(), this.indexEnd))
 					
-				markEmpty ();
+				markEmpty();
 			
 			else 
 				
-				this.indexStart = index + matchText.length ();
+				this.indexStart = index + matchText.length();
 		}
 	}
 		
@@ -147,51 +147,51 @@ public class StringCarver {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 		
-		if (! isEmpty ()) {
+		if (! isEmpty()) {
 
 			index = this.string.indexOf (matchText, this.indexStart);
 			
-			if (index == -1 || isCrossed (index + matchText.length (), this.indexEnd))
+			if (index == -1 || isCrossed (index + matchText.length(), this.indexEnd))
 					
-				markEmpty ();
+				markEmpty();
 			
 			else 
 				
-				this.indexStart = index + matchText.length ();
+				this.indexStart = index + matchText.length();
 		}
 	}
 		
 	
-	public boolean isEmpty () {
+	public boolean isEmpty() {
 		
 		return this.isEmpty;
 	}
 	
 	
-	public void resetStartPointer () {
+	public void resetStartPointer() {
 		
 		this.indexStart = 0;
 		this.isEmpty = false;
 	}
 	
 	
-	public void resetEndPointer () {
+	public void resetEndPointer() {
 		
 		this.indexEnd = StringUtils.getLength (this.string);
 		this.isEmpty = false;
 	}
 	
 	
-	public void resetPointers () {
+	public void resetPointers() {
 		
 		resetStartPointer();
 		resetEndPointer();
 	}
 	
 	
-	public String toString () {
+	public String toString() {
 		
-		if (isEmpty ())
+		if (isEmpty())
 		
 			return StringCarver.EMPTY_STRING;
 		

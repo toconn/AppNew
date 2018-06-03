@@ -45,7 +45,7 @@ public class UaList <E> extends ArrayList <E> {
 	}
 	
 	
-	public UaList <E> cloneMe () {
+	public UaList <E> cloneMe() {
 		
 		//////////////////////////////////////////////////////////////////
 		// Declarations

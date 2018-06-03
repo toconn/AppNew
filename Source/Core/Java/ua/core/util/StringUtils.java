@@ -105,7 +105,7 @@ public class StringUtils {
 		
 		if (textArray != null && textArray.length > 0) {
 
-			concatStringBuffer = new StringBuffer ();
+			concatStringBuffer = new StringBuffer();
 			
 			for (i = 0; i < textArray.length; i++) {
 				
@@ -136,7 +136,7 @@ public class StringUtils {
 	
 		if (mainString != null && matchString != null) {
 			
-			return mainString.toLowerCase ().contains (matchString.toLowerCase ());
+			return mainString.toLowerCase().contains (matchString.toLowerCase());
 		}
 		else if (mainString == null && matchString == null) {
 			
@@ -408,7 +408,7 @@ public class StringUtils {
 		
 		if (string != null)
 			
-			return string.length ();
+			return string.length();
 		
 		else 
 			
@@ -439,7 +439,7 @@ public class StringUtils {
 				
 				if (itemString.length() > maxLength) {
 					
-					maxLength = itemString.length ();
+					maxLength = itemString.length();
 				}
 			}
 		}
@@ -481,7 +481,7 @@ public class StringUtils {
 		
 		if (isNonEmpty (text) && text.length() >= searchText.length()) {
 				
-			return text.toLowerCase().indexOf (searchText.toLowerCase ()) != -1;
+			return text.toLowerCase().indexOf (searchText.toLowerCase()) != -1;
 		}
 		
 		return false;
@@ -521,7 +521,7 @@ public class StringUtils {
 		
 		if (isNonEmpty (text) && text.length() >= 1) {
 				
-			return Character.toLowerCase (text.charAt (text.length () - 1)) ==  Character.toLowerCase (endingChar);
+			return Character.toLowerCase (text.charAt (text.length() - 1)) ==  Character.toLowerCase (endingChar);
 		}
 		
 		return false;
@@ -530,9 +530,9 @@ public class StringUtils {
 	
 	public static boolean isEndsWith (String text, String endString) {
 		
-		if (isNonEmpty (text) && isNonEmpty (endString) && text.length() >= endString.length ()) {
+		if (isNonEmpty (text) && isNonEmpty (endString) && text.length() >= endString.length()) {
 				
-			return text.toLowerCase ().endsWith (endString.toLowerCase ());
+			return text.toLowerCase().endsWith (endString.toLowerCase());
 		}
 		
 		return false;
@@ -594,7 +594,7 @@ public class StringUtils {
 		
 		if (isNonEmpty (text) && text.length() >= startingText.length()) {
 				
-			return isEqual (text.substring (0, startingText.length()).toLowerCase (), startingText.toLowerCase ());
+			return isEqual (text.substring (0, startingText.length()).toLowerCase(), startingText.toLowerCase());
 		}
 		
 		return false;
@@ -618,7 +618,7 @@ public class StringUtils {
 		
 		// Main:
 		
-		stringBuffer	= new StringBuffer ();
+		stringBuffer	= new StringBuffer();
 		isFirst			= true;
 		
 		for (String string : stringList) {
@@ -633,7 +633,7 @@ public class StringUtils {
 			stringBuffer.append (string);
 		}
 		
-		return stringBuffer.toString ();
+		return stringBuffer.toString();
 	}
 	
 	
@@ -836,7 +836,7 @@ public class StringUtils {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 		
-		stringBuilder = new StringBuilder ();
+		stringBuilder = new StringBuilder();
 		
 		if (isNonEmpty (text)) {
 			
@@ -862,7 +862,7 @@ public class StringUtils {
 		}
 		
 		
-		return stringBuilder.toString ();
+		return stringBuilder.toString();
 	}
 	
 	
@@ -1157,7 +1157,7 @@ public class StringUtils {
 		// Code
 		//////////////////////////////////////////////////////////////////
 
-		stringBuilder	= new StringBuilder ();
+		stringBuilder	= new StringBuilder();
 		
 		isFirst = true;
 		
@@ -1179,7 +1179,7 @@ public class StringUtils {
 		}
 		
 		
-		return stringBuilder.toString ();
+		return stringBuilder.toString();
 	}
 	
 	/**

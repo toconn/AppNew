@@ -45,22 +45,22 @@ public class ClassUtils {
 		}	
 	}
 	
-	public static String getThisClassName () {
+	public static String getThisClassName() {
 		
 		return Thread.currentThread().getStackTrace()[2].getMethodName();
 	}
 
-	public static String getThisMethodName () {
+	public static String getThisMethodName() {
 		
 		return Thread.currentThread().getStackTrace()[2].getMethodName();
 	}
 
-	public static String getUpperClassName () {
+	public static String getUpperClassName() {
 		
 		return Thread.currentThread().getStackTrace()[3].getMethodName();
 	}
 
-	public static String getUpperMethodName () {
+	public static String getUpperMethodName() {
 		
 		return Thread.currentThread().getStackTrace()[3].getMethodName();
 	}

@@ -14,11 +14,11 @@ public class UaUser {
 	boolean	loggedIn		= false;
 	
 	
-	public UaUser () { }
+	public UaUser() { }
 
 
 	
-	public String getUserId () {
+	public String getUserId() {
 	
 		return userId;
 	}
@@ -32,7 +32,7 @@ public class UaUser {
 
 
 	
-	public String getUserPassword () {
+	public String getUserPassword() {
 	
 		return userPassword;
 	}
@@ -46,7 +46,7 @@ public class UaUser {
 
 
 	
-	public String getUserName () {
+	public String getUserName() {
 	
 		return userName;
 	}
@@ -60,7 +60,7 @@ public class UaUser {
 
 
 	
-	public Locale getUserLocale () {
+	public Locale getUserLocale() {
 	
 		return userLocale;
 	}
@@ -74,7 +74,7 @@ public class UaUser {
 
 
 	
-	public boolean isLoggedIn () {
+	public boolean isLoggedIn() {
 	
 		return loggedIn;
 	}

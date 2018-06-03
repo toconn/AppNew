@@ -29,7 +29,7 @@ public class EnvironmentService {
 		
 		// MAIN:
 		
-		list = new ArrayList <String> ();
+		list = new ArrayList <String>();
 		
 		if (CollectionUtils.isNonEmpty (textList)) {
 			
@@ -71,9 +71,9 @@ public class EnvironmentService {
 
 		if (StringUtils.isNonEmpty (envString)) {
 			
-			expandedStringBuilder = new StringBuilder ();
+			expandedStringBuilder = new StringBuilder();
 			
-			while (nextIndex > -1 && previousIndex < envString.length ()) {
+			while (nextIndex > -1 && previousIndex < envString.length()) {
 				
 		    	// find next %
 				
@@ -135,7 +135,7 @@ public class EnvironmentService {
 
 			}
 			
-			if (previousIndex < envString.length ()) {
+			if (previousIndex < envString.length()) {
 				
 				// Append remaining text
 				expandedStringBuilder.append (envString.substring (previousIndex));
@@ -143,7 +143,7 @@ public class EnvironmentService {
 	    	
 	    	// return string
 				
-			return expandedStringBuilder.toString ();
+			return expandedStringBuilder.toString();
 			
 		}
 	    else {
@@ -161,7 +161,7 @@ public class EnvironmentService {
 	 * 
 	 * @return
 	 */
-	public static String getAppDirectory () {
+	public static String getAppDirectory() {
 		
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -256,7 +256,7 @@ public class EnvironmentService {
 			
 			// Trim to class name.
 			
-			trimEnd = directoryName.length () - appClass.getName().length() - 7;
+			trimEnd = directoryName.length() - appClass.getName().length() - 7;
 		}
 		
 		
@@ -282,7 +282,7 @@ public class EnvironmentService {
 	 * 
 	 * @return
 	 */
-    public static String getAppDataAllDir () {
+    public static String getAppDataAllDir() {
     	
     	// Declarations
     	
@@ -311,7 +311,7 @@ public class EnvironmentService {
      * 
      * @return
      */
-    public static String getAppDataAllDirDefault () {
+    public static String getAppDataAllDirDefault() {
     	
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -326,7 +326,7 @@ public class EnvironmentService {
     	
     	directoryPathList = FileUtils.expandPathToList (getAppDataAllDir());
   
-    	if (directoryPathList != null && directoryPathList.size () > 0) {
+    	if (directoryPathList != null && directoryPathList.size() > 0) {
     		
     		return directoryPathList.get (0);
     	}
@@ -343,7 +343,7 @@ public class EnvironmentService {
      * 
      * @return
      */
-    public static StringList getAppDataAllDirList () {
+    public static StringList getAppDataAllDirList() {
     	
     	return FileUtils.expandPathToList (getAppDataAllDir());
     }
@@ -354,7 +354,7 @@ public class EnvironmentService {
      * 
      * @return
      */
-    public static String getAppDataUserDir () {
+    public static String getAppDataUserDir() {
     	
     	// Declarations
     	
@@ -383,7 +383,7 @@ public class EnvironmentService {
      * 
      * @return
      */
-    public static String getAppDataUserDirDefault () {
+    public static String getAppDataUserDirDefault() {
     	
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -398,7 +398,7 @@ public class EnvironmentService {
     	
     	directoryPathList = FileUtils.expandPathToList (getAppDataUserDir());
   
-    	if (directoryPathList != null && directoryPathList.size () > 0) {
+    	if (directoryPathList != null && directoryPathList.size() > 0) {
     		
     		return directoryPathList.get (0);
     	}
@@ -415,13 +415,13 @@ public class EnvironmentService {
      * 
      * @return
      */
-    public static StringList getAppDataUserDirList () {
+    public static StringList getAppDataUserDirList() {
     	
          return FileUtils.expandPathToList (getAppDataUserDir());
     }
     
 
-    public static String getAppDataUserAllDir () {
+    public static String getAppDataUserAllDir() {
     	
     	// Return the generic all application config directory.
 
@@ -434,7 +434,7 @@ public class EnvironmentService {
      * 
      * @return
      */
-	public static String getWorkingDir () {
+	public static String getWorkingDir() {
 		
 		return System.getProperty (IEnvironmentConst.JAVA_PROPERTIES_APP_DIR);
 	}
@@ -472,7 +472,7 @@ public class EnvironmentService {
     	
         // Check Application Executable Directory...
 
-    	fullPath = getAppDirectory ();
+    	fullPath = getAppDirectory();
 
         if (FileUtils.isFileExists (FileUtils.getFileName (fullPath, directoryName))) {
 
@@ -593,7 +593,7 @@ public class EnvironmentService {
     	
         // Check Application Executable Directory...
 
-        fileDirectory = getAppDirectory ();
+        fileDirectory = getAppDirectory();
 
         if (FileUtils.isFileExists (FileUtils.getFileName (fileDirectory, fileName))) {
 
@@ -720,7 +720,7 @@ public class EnvironmentService {
     	
         // Check Application Executable Directory...
 
-        fileDirectory = getAppDirectory ();
+        fileDirectory = getAppDirectory();
 
         if (FileUtils.isFileExists (FileUtils.getFileName (fileDirectory, fileName))) {
 

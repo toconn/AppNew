@@ -73,7 +73,7 @@ public class FileLogger implements ILogger {
 	}
 
 	
-	public Locale getLocale () {
+	public Locale getLocale() {
 		
 		return locale;
 	}

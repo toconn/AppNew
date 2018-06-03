@@ -34,7 +34,7 @@ public class StringTable {
 	 */
 	public StringTable (int newColumnSize) {
 
-		super ();
+		super();
 
 		colSize			= newColumnSize;
 		rowSize			= defaultRowCapacity;
@@ -53,7 +53,7 @@ public class StringTable {
 	 */
 	public StringTable (int newRowSize, int newColumnSize) {
 
-		super ();
+		super();
 
 		colSize			= newColumnSize;
 		rowSize			= newRowSize;
@@ -121,7 +121,7 @@ public void ensureRowCapacity (int minCapacity) {
 }	/**
 	 * @return Returns the columnSize.
 	 */
-	public int getColumnSize () {
+	public int getColumnSize() {
 
 		return colSize;
 	}
@@ -141,7 +141,7 @@ public void ensureRowCapacity (int minCapacity) {
 	/**
 	 * @return Returns the rowSize.
 	 */
-	public int getRowSize () {
+	public int getRowSize() {
 
 		return rowSize;
 	}

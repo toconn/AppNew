@@ -20,8 +20,19 @@ public interface IAppGeneratorConst {
 	public String		CONFIG_SECTION_TAGS					= "Tags";
 
 	public String		TAG_APP_NAME						= "AppName"; 
+	public String		TAG_APP_NAME_DOTS					= "AppNameDots"; 
+	public String		TAG_APP_NAME_DOTS_LOWER_CASE		= "AppNameDotsLowerCase";
+	public String		TAG_APP_NAME_HYPHENS				= "AppNameHyphens"; 
+	public String		TAG_APP_NAME_HYPHENS_LOWER_CASE		= "AppNameHyphensLowerCase";
+	public String		TAG_APP_NAME_UNDERSCORES			= "AppNameUnderscores"; 
+	public String		TAG_APP_NAME_UNDERSCORES_LOWER_CASE	= "AppNameUnderscoresLowerCase";
 	public String		TAG_APP_NAME_NO_SPACES				= "AppNameNoSpaces"; 
-	public String		TAG_APP_NAME_NO_SPACES_LOWER_CASE	= "AppNameNoSpacesLowerCase"; 
+	public String		TAG_APP_NAME_NO_SPACES_LOWER_CASE	= "AppNameNoSpacesLowerCase";
+	
+	public String		TAG_DATE_NOW						= "DateNow";
+	public String		TAG_DATE_NOW_DASH					= "DateNowDash";
+	public String		TAG_DATE_NOW_DOT					= "DateNowDot";
+
 	public String		TAG_PROJECT_DIR						= "ProjectDir";
 	public String		TAG_PROJECT_DIR_PREFIX				= "ProjectDirPrefix";
 	public String		TAG_PROJECT_DIR_REF					= "ProjectDirRef";

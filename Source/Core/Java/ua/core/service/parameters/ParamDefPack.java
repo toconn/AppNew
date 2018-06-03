@@ -25,7 +25,7 @@ public class ParamDefPack {
 		this.paramIdentifier			= paramIdentifier;
 		this.defaultShowHelp			= defaultShowHelp;
 		
-		setParamDefMap ();
+		setParamDefMap();
 	}
 	
 	
@@ -59,22 +59,22 @@ public class ParamDefPack {
 			}
 		}
 		
-		setParamDefMap ();
+		setParamDefMap();
 	}
 	
 	
-	public int getParamDefCount () {
+	public int getParamDefCount() {
 		
 		return paramDefMap.size();
 	}
 	
-	public UaMap <ParamDef> getParamDefMap () {
+	public UaMap <ParamDef> getParamDefMap() {
 		
 		return paramDefMap;
 	}
 	
 	
-	private void setParamDefMap () {
+	private void setParamDefMap() {
 			
 		//////////////////////////////////////////////////////////////////
 		// Declarations:
@@ -87,7 +87,7 @@ public class ParamDefPack {
 		// Code:
 		//////////////////////////////////////////////////////////////////
 		
-    	paramDefMap = new UaMap <ParamDef> ();
+    	paramDefMap = new UaMap <ParamDef>();
     	
     	if (paramDefArray != null) {
     		
@@ -102,7 +102,7 @@ public class ParamDefPack {
 	}
 	
 	
-	public StringList toStringListParamDefs () {
+	public StringList toStringListParamDefs() {
 	
 		return toStringListParamDefs (paramDefMap.getKeyMaxLength() + 2);
 	}
@@ -124,7 +124,7 @@ public class ParamDefPack {
 
     	// Create toStringList...
     	
-    	toStringList = new StringList ();
+    	toStringList = new StringList();
     	
     	for (i = 0; i < paramDefArray.length; i++) {
     		

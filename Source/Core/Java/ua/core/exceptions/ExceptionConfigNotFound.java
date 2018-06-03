@@ -28,7 +28,7 @@ public class ExceptionConfigNotFound extends ExceptionBase {
 	}
 	
 	
-	public Message getExceptionType () {
+	public Message getExceptionType() {
 	
 		return IExceptionConst.MESSAGE_CONFIG_NOT_FOUND;
 	}

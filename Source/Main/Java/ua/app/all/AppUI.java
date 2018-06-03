@@ -34,9 +34,9 @@ public class AppUI {
 	}
 	
 	
-	public static void print () {
+	public static void print() {
 		
-		ui.print ();
+		ui.print();
 	}
 	
 	
@@ -92,7 +92,7 @@ public class AppUI {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 		
-		stringList	= new StringList ();
+		stringList	= new StringList();
 		
 		if (exception.getOriginalException() != null) {
 			

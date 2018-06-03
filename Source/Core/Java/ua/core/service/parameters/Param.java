@@ -19,7 +19,7 @@ public class Param {
 		setSubparamStringArray (subparamStringArray);
 	}
 	
-	public Param cloneMe () {
+	public Param cloneMe() {
 		
 		//////////////////////////////////////////////////////////////////
 		// Declarations:
@@ -41,7 +41,7 @@ public class Param {
 	}
 	
 	
-	public boolean hasSubParams () {
+	public boolean hasSubParams() {
 		
 		if (this.subParamStringArray != null && this.subParamStringArray.length > 0) {
 			
@@ -54,7 +54,7 @@ public class Param {
 	}
 
 	
-	public String getName () {
+	public String getName() {
 	
 		return name;
 	}
@@ -66,7 +66,7 @@ public class Param {
 	}
 
 	
-	public boolean hasError () {
+	public boolean hasError() {
 	
 		return hasError;
 	}
@@ -78,7 +78,7 @@ public class Param {
 	}
 
 	
-	public ParamDef getParamDef () {
+	public ParamDef getParamDef() {
 	
 		return paramDef;
 	}
@@ -103,7 +103,7 @@ public class Param {
 	}
 
 	
-	public String getSubParamsAsString () {
+	public String getSubParamsAsString() {
 		
 
 		// ///////////////////////////////////////////////////////////////
@@ -122,7 +122,7 @@ public class Param {
 		
 		if (hasSubParams()) {
 			
-			subParamsStringBuilder = new StringBuilder (); 
+			subParamsStringBuilder = new StringBuilder(); 
 			first = true;
 
 			for (String subParam: subParamStringArray) {
@@ -139,7 +139,7 @@ public class Param {
 				subParamsStringBuilder.append (subParam);
 			}
 			
-			return subParamsStringBuilder.toString ();
+			return subParamsStringBuilder.toString();
 		}
 		else {
 			
@@ -148,7 +148,7 @@ public class Param {
 	}
 
 	
-	public String[] getSubparamStringArray () {
+	public String[] getSubparamStringArray() {
 	
 		return subParamStringArray;
 	}
@@ -174,7 +174,7 @@ public class Param {
 	 * @return
 	 */
 	
-	public int getSubparamCount () {
+	public int getSubparamCount() {
 	
 		return count;
 	}

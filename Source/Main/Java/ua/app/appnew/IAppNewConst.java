@@ -12,13 +12,14 @@ public interface IAppNewConst {
 	//////////////////////////////////////////////////////////////////
 		
 	public String	APP_NAME 					= "AppNew";
-	public String	APP_VERSION 				= "1.00.05";
+	public String	APP_VERSION 				= "1.00.08";
 
 	public String	APP_CREATION_DATE			= "2011-07-22";
-	public String	APP_BUILD_DATE				= "2013-06-26";
-	public String	APP_BUILD_NUMBER			= "6";
-	
+	public String	APP_BUILD_DATE				= "2018-04-21";
+	public String	APP_BUILD_NUMBER			= "10";
+
 	public String	APP_AUTHOR					= "Tadhg Ua Conaill";
+
 
 	
 	//////////////////////////////////////////////////////////////////

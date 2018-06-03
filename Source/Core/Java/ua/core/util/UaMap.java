@@ -39,7 +39,7 @@ public class UaMap <ValueType> extends HashMap <String, ValueType> {
 
 	public UaMap (Map <? extends String, ? extends ValueType> map) {
 		
-		super ();
+		super();
 		
 		this.putAll (map);
 	}
@@ -86,7 +86,7 @@ public class UaMap <ValueType> extends HashMap <String, ValueType> {
 	}
 	
 	
-	public StringList getKeyList () {
+	public StringList getKeyList() {
 		
 		///////////////////////////////////////////////////////////////////////
 		// Declarations:
@@ -99,7 +99,7 @@ public class UaMap <ValueType> extends HashMap <String, ValueType> {
 		// Code:
 		///////////////////////////////////////////////////////////////////////
 
-		keyList = new StringList ();
+		keyList = new StringList();
 		
 		for (String key : this.keySet()) {
 			
@@ -110,7 +110,7 @@ public class UaMap <ValueType> extends HashMap <String, ValueType> {
 	}
 	
 	
-	public int getKeyMaxLength () {
+	public int getKeyMaxLength() {
 		
 		int maxLength = 0;
 		
@@ -126,7 +126,7 @@ public class UaMap <ValueType> extends HashMap <String, ValueType> {
 	}
 	
 	
-	public StringList getSortedKeyList () {
+	public StringList getSortedKeyList() {
 		
 		///////////////////////////////////////////////////////////////////////
 		// Declarations:
@@ -139,7 +139,7 @@ public class UaMap <ValueType> extends HashMap <String, ValueType> {
 		// Code:
 		///////////////////////////////////////////////////////////////////////
 
-		keyList = this.getKeyList ();
+		keyList = this.getKeyList();
 		
 		keyList.sort();
 		

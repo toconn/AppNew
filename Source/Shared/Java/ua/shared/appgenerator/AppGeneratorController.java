@@ -18,6 +18,7 @@ import ua.core.util.Message;
 import ua.core.util.NVStringPair;
 import ua.core.util.StringUtils;
 import ua.core.util.UaProperties;
+import ua.core.util.dates.DateUtils;
 import ua.core.util.file.DirectoryUtils;
 import ua.core.util.file.FileUtils;
 import ua.core.util.filereader.DataReader;
@@ -27,6 +28,7 @@ public class AppGeneratorController {
 	
 	AppGenerator	appGenerator	= null;
 	ICompUI			compUI			= null;
+	String			targetDirectory = null;
 	
 
 	public AppGeneratorController (ICompUI compUI, AppGeneratorInfo generatorInfo) throws ExceptionValidation {
@@ -55,12 +57,12 @@ public class AppGeneratorController {
 		}
 		
 		
-		if (StringUtils.isEmpty (generatorInfo.getAppName ()))
+		if (StringUtils.isEmpty (generatorInfo.getAppName()))
 			
 			exceptionVal = ValidationUtils.addMessage (exceptionVal, IAppGeneratorConst.MESSAGE_APP_NAME_REQUIRED);
 
 
-		if (StringUtils.isEmpty (generatorInfo.getTemplateName ()))
+		if (StringUtils.isEmpty (generatorInfo.getTemplateName()))
 			
 			exceptionVal = ValidationUtils.addMessage (exceptionVal, IAppGeneratorConst.MESSAGE_APP_NAME_REQUIRED);
 
@@ -71,11 +73,11 @@ public class AppGeneratorController {
 
 			// Store settings.
 			
-			appGenerator = new AppGenerator ();
+			appGenerator = new AppGenerator();
 			
-			appGenerator.setAppName				(generatorInfo.getAppName ());
-			appGenerator.setGeneratorName		(generatorInfo.getTemplateName ());
-			appGenerator.setAppTagProperties	(generatorInfo.getAppProperties ());
+			appGenerator.setAppName				(generatorInfo.getAppName());
+			appGenerator.setGeneratorName		(generatorInfo.getTemplateName());
+			appGenerator.setAppTagProperties	(generatorInfo.getAppProperties());
 			
 			this.appGenerator = appGenerator;
 
@@ -110,21 +112,21 @@ public class AppGeneratorController {
 		
 		try {
 		
-			lineReader	= new AppTemplateConfigLineReader ();
+			lineReader	= new AppTemplateConfigLineReader();
 			dataReader	= new DataReader <AppGenerator> (lineReader);
 			dataReader.read (configFileName, this.appGenerator);
 		}
 		catch (ExceptionItemNotFound e) {
 			
-			throw new ExceptionValidation (e.getMessageList ());
+			throw new ExceptionValidation (e.getMessageList());
 		}
 
 		
 		// Check for errors...
 		
-		if (lineReader.hasError ()) {
+		if (lineReader.hasError()) {
 			
-			exceptionVal = lineReader.getExceptionValidation ();
+			exceptionVal = lineReader.getExceptionValidation();
 			exceptionVal.addFirstMessage (IExceptionConst.MESSAGE_CONFIG_FILE_CONTAINS_ERRORS.cloneMe (configName));
 			
 			throw exceptionVal;
@@ -139,7 +141,7 @@ public class AppGeneratorController {
 	 * @throws ExceptionValidation
 	 * @throws ExceptionRuntime
 	 */
-	private void loadConfigApp () throws ExceptionValidation, ExceptionRuntime {
+	private void loadConfigApp() throws ExceptionValidation, ExceptionRuntime {
 		
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -156,7 +158,7 @@ public class AppGeneratorController {
 		// Find configuration file...
 		
 		configName		= IAppGeneratorConst.APP_CONFIG_FILE_NAME;
-		configFileName	= AppGeneratorUtils.getAppGeneratorConfigFile ();
+		configFileName	= AppGeneratorUtils.getAppGeneratorConfigFile();
 		
 		if (configFileName == null) {
 			
@@ -170,7 +172,7 @@ public class AppGeneratorController {
 	}
 	
 	
-	private void loadConfigDeployment () throws ExceptionValidation, ExceptionRuntime {
+	private void loadConfigDeployment() throws ExceptionValidation, ExceptionRuntime {
 		
 		
 		// ///////////////////////////////////////////////////////////////
@@ -186,7 +188,7 @@ public class AppGeneratorController {
 		
 		// Find configuration file...
 		
-		templateConfigFileName = AppGeneratorUtils.getGeneratorDeploymentFile (this.appGenerator.getGeneratorDir ());
+		templateConfigFileName = AppGeneratorUtils.getGeneratorDeploymentFile (this.appGenerator.getGeneratorDir());
 
 		if (! FileUtils.isFileExists (templateConfigFileName))
 			
@@ -207,7 +209,7 @@ public class AppGeneratorController {
 	 * @return
 	 */
 	
-	public boolean createApp () throws ExceptionRuntime {
+	public boolean createApp() throws ExceptionRuntime {
 		
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -238,14 +240,14 @@ public class AppGeneratorController {
 			
 			// Set deployment directory...
 			
-			// this.appGenerator.setGeneratorDirName (this.appGenerator.getGeneratorName ());
+			// this.appGenerator.setGeneratorDirName (this.appGenerator.getGeneratorName());
 			
 
 			// Load the application config...
 			
 			try {
 				
-				loadConfigApp ();
+				loadConfigApp();
 			}
 			catch (ExceptionValidation e) {
 				
@@ -257,7 +259,7 @@ public class AppGeneratorController {
 
 			try {
 				
-				loadConfigDeployment ();
+				loadConfigDeployment();
 			}
 			catch (ExceptionValidation e) {
 				
@@ -278,21 +280,21 @@ public class AppGeneratorController {
 			
 			this.compUI.updateStatus (IAppGeneratorConst.MESSAGE_PROCESSING_TAGS);
 			
-			processTags ();
+			processTags();
 			
 			
 			// Create Directories...
 			
 			this.compUI.updateStatus (IAppGeneratorConst.MESSAGE_CREATING_DIRECTORIES);
 			
-			createDirectories ();
+			createDirectories();
 			
 			
 			// Copy Directories...
 			
 			this.compUI.updateStatus (IAppGeneratorConst.MESSAGE_COPYING_DIRECTORIES);
 			
-			copyDirectories ();
+			copyDirectories();
 
 
 			
@@ -300,7 +302,7 @@ public class AppGeneratorController {
 			
 			this.compUI.updateStatus (IAppGeneratorConst.MESSAGE_PROCESSING_TEMPLATES);
 			
-			processTemplates ();
+			processTemplates();
 			
 			
 			// Done.
@@ -322,7 +324,7 @@ public class AppGeneratorController {
 	
 	
 	@SuppressWarnings ("rawtypes")
-	public void createDirectories () throws ExceptionValidation {
+	public void createDirectories() throws ExceptionValidation {
 		
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -342,7 +344,7 @@ public class AppGeneratorController {
 			dataMap = getProcessedTagDataMap();
 			
 			
-			for (String directoryName: this.appGenerator.getDirectoryCreateStringList ()) {
+			for (String directoryName: this.appGenerator.getDirectoryCreateStringList()) {
 				
 				directoryName = getProcessedValue (dataMap, directoryName);
 				
@@ -360,7 +362,7 @@ public class AppGeneratorController {
 	
 	
 	@SuppressWarnings ("rawtypes")
-	public void copyDirectories () throws ExceptionValidation {
+	public void copyDirectories() throws ExceptionValidation {
 		
 		
 		// ///////////////////////////////////////////////////////////////
@@ -386,9 +388,9 @@ public class AppGeneratorController {
 			dataMap = getProcessedTagDataMap();
 			
 			
-			for (NVStringPair dirNVPair: this.appGenerator.getDirectoryCopyNVList ()) {
+			for (NVStringPair dirNVPair: this.appGenerator.getDirectoryCopyNVList()) {
 				
-				sourceDirName = getProcessedValue (dataMap, dirNVPair.getName ());
+				sourceDirName = getProcessedValue (dataMap, dirNVPair.getName());
 				targetDirName = getProcessedValue (dataMap, dirNVPair.getValue());
 				
 				try {
@@ -399,7 +401,7 @@ public class AppGeneratorController {
 
 					if (exceptionVal != null)
 					
-						exceptionVal.addMessageList (e.getMessageList ());
+						exceptionVal.addMessageList (e.getMessageList());
 					
 					else
 						
@@ -419,14 +421,14 @@ public class AppGeneratorController {
 		}
 		catch (ExceptionItemNotFound e) {
 			
-			exceptionVal = new ExceptionValidation (e.getMessageList ());
+			exceptionVal = new ExceptionValidation (e.getMessageList());
 			exceptionVal.addFirstMessage (IAppGeneratorConst.MESSAGE_ERROR_COPYING_DIRECTORIES);
 			
 			throw exceptionVal;
 		}
 		catch (IOException e) {
 			
-			exceptionVal = new ExceptionValidation (IExceptionConst.MESSAGE_EMPTY_VALUE.cloneMe (e.getMessage ()));
+			exceptionVal = new ExceptionValidation (IExceptionConst.MESSAGE_EMPTY_VALUE.cloneMe (e.getMessage()));
 			exceptionVal.addFirstMessage (IAppGeneratorConst.MESSAGE_ERROR_COPYING_DIRECTORIES);
 			
 			throw exceptionVal;
@@ -442,7 +444,7 @@ public class AppGeneratorController {
 		
 	
 	@SuppressWarnings ({ "rawtypes" })
-	private HashMap getProcessedTagDataMap () {
+	private HashMap getProcessedTagDataMap() {
 		
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -460,9 +462,9 @@ public class AppGeneratorController {
 		
 		// Get dataMap
 		
-		freeMarkerComp = new FreeMarkerComp ();
+		freeMarkerComp = new FreeMarkerComp();
 		
-		dataMap = freeMarkerComp.getTemplateDataMap (this.appGenerator.getProcessedTagProperties ());
+		dataMap = freeMarkerComp.getTemplateDataMap (this.appGenerator.getProcessedTagProperties());
 		
 		freeMarkerComp.setDefaultDataTags (dataMap);
 		
@@ -494,7 +496,7 @@ public class AppGeneratorController {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 
-		freeMarkerComp = new FreeMarkerComp ();
+		freeMarkerComp = new FreeMarkerComp();
 		
 		processedValue = EnvironmentService.expandEnvironmentString (value);
 		processedValue = freeMarkerComp.processToString (processedValue, dataMap);
@@ -512,9 +514,9 @@ public class AppGeneratorController {
 			
 			// Not absolute path. Check relative to the deployment source directory...
 			
-			if (DirectoryUtils.isDirectoryExists (FileUtils.getFileName (this.appGenerator.getGeneratorDir (), sourceDirName)))
+			if (DirectoryUtils.isDirectoryExists (FileUtils.getFileName (this.appGenerator.getGeneratorDir(), sourceDirName)))
 				
-				sourceDirName = FileUtils.getFileName (this.appGenerator.getGeneratorDir (), sourceDirName);
+				sourceDirName = FileUtils.getFileName (this.appGenerator.getGeneratorDir(), sourceDirName);
 			
 			else
 				
@@ -535,7 +537,7 @@ public class AppGeneratorController {
 	 * @return
 	 */
 	@SuppressWarnings ({ "rawtypes" })
-	private HashMap getTagDataMap () {
+	private HashMap getTagDataMap() {
 		
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -553,18 +555,26 @@ public class AppGeneratorController {
 		
 		// Get dataMap
 		
-		freeMarkerComp = new FreeMarkerComp ();
+		freeMarkerComp = new FreeMarkerComp();
 
-		dataMap = freeMarkerComp.getTemplateDataMap (this.appGenerator.getTagProperties ());
+		dataMap = freeMarkerComp.getTemplateDataMap (this.appGenerator.getTagProperties());
 		
 		freeMarkerComp.setDefaultDataTags (dataMap);
 		
 		return dataMap;
 	}
 	
+	public String getTargetDirectory() {
+		
+		String targetDirectory;
+		
+		targetDirectory = this.appGenerator.getProcessedTagProperties().getProperty("ProjectDir");
+
+		return targetDirectory;
+	}
 	
 	@SuppressWarnings ("rawtypes")
-	public void processTemplates () throws ExceptionValidation {
+	public void processTemplates() throws ExceptionValidation {
 		
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -586,7 +596,7 @@ public class AppGeneratorController {
 		
 		try {
 
-			freeMarkerComp = new FreeMarkerComp ();
+			freeMarkerComp = new FreeMarkerComp();
 			
 			
 			// Get dataHash
@@ -594,11 +604,11 @@ public class AppGeneratorController {
 			dataMap = getProcessedTagDataMap();
 			
 			
-			for (NVStringPair nvPair: this.appGenerator.getTemplateNVList ()) {
+			for (NVStringPair nvPair: this.appGenerator.getTemplateNVList()) {
 				
 				try {
 				
-					templateFileName	= getProcessedValue (dataMap, nvPair.getName ());
+					templateFileName	= getProcessedValue (dataMap, nvPair.getName());
 					targetFileName		= getProcessedValue (dataMap, nvPair.getValue());
 				}
 				catch (ExceptionValidation e) {
@@ -608,7 +618,7 @@ public class AppGeneratorController {
 				
 				// Prepend the deployment path to the template directory...
 				
-				templateFileName	= FileUtils.getFileName (this.appGenerator.getGeneratorDir (), templateFileName);
+				templateFileName	= FileUtils.getFileName (this.appGenerator.getGeneratorDir(), templateFileName);
 				
 				// Process the template...
 				
@@ -618,11 +628,11 @@ public class AppGeneratorController {
 				}
 				catch (ExceptionValidation e) {
 					
-					exceptionVal = ValidationUtils.addMessage (exceptionVal, IAppGeneratorConst.MESSAGE_ERROR_INVALID_TEMPLATE_FILE.cloneMe (nvPair.getName ()));
+					exceptionVal = ValidationUtils.addMessage (exceptionVal, IAppGeneratorConst.MESSAGE_ERROR_INVALID_TEMPLATE_FILE.cloneMe (nvPair.getName()));
 				}
 				catch (Exception e) {
 					
-					exceptionVal = ValidationUtils.addMessage (exceptionVal, IAppGeneratorConst.MESSAGE_ERROR_INVALID_TEMPLATE_FILE.cloneMe (nvPair.getName ()));
+					exceptionVal = ValidationUtils.addMessage (exceptionVal, IAppGeneratorConst.MESSAGE_ERROR_INVALID_TEMPLATE_FILE.cloneMe (nvPair.getName()));
 				}
 			}
 			
@@ -651,7 +661,7 @@ public class AppGeneratorController {
 	 * @throws ExceptionValidation
 	 */
 	@SuppressWarnings ({ "rawtypes", "unchecked" })
-	public void processTags () throws ExceptionValidation {
+	public void processTags() throws ExceptionValidation {
 		
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -676,7 +686,7 @@ public class AppGeneratorController {
 		
 		copyAppTagsToGeneralTags();
 		
-		freeMarkerComp = new FreeMarkerComp ();
+		freeMarkerComp = new FreeMarkerComp();
 
 		
 		// Get dataMap
@@ -688,18 +698,18 @@ public class AppGeneratorController {
 
 		// Loop through properties and store in data Hash
 		
-		for (NVStringPair nvPair: this.appGenerator.getTagProperties ()) {
+		for (NVStringPair nvPair: this.appGenerator.getTagProperties()) {
 		
 			try {
 			
 				// Process for environment variables and internal tags..
 				
-				tagValue = getProcessedValue (dataMap, nvPair.getValue ());
+				tagValue = getProcessedValue (dataMap, nvPair.getValue());
 				
 				
 				// Store...
 				
-				dataMap.put (nvPair.getName (), tagValue);
+				dataMap.put (nvPair.getName(), tagValue);
 				
 			}
 			catch (ExceptionValidation e) {
@@ -708,11 +718,11 @@ public class AppGeneratorController {
 				
 				
 				// Debug Remove: //////////////////////////////////////////////
-				AppUI.print (nvPair.getName () + ":     " + nvPair.getValue());
-				AppUI.print ();
+				AppUI.print (nvPair.getName() + ":     " + nvPair.getValue());
+				AppUI.print();
 				// Debug Remove: //////////////////////////////////////////////
 				
-				exceptionVal = ValidationUtils.addMessage (exceptionVal, IAppGeneratorConst.MESSAGE_INVALID_TAG.cloneMe (nvPair.getName ()));
+				exceptionVal = ValidationUtils.addMessage (exceptionVal, IAppGeneratorConst.MESSAGE_INVALID_TAG.cloneMe (nvPair.getName()));
 			}
 		}
 		
@@ -721,27 +731,27 @@ public class AppGeneratorController {
 		
 		if (exceptionVal == null) {
 			
-			processedTagsProps = this.appGenerator.getProcessedTagProperties ();
+			processedTagsProps = this.appGenerator.getProcessedTagProperties();
 	
-			for (NVStringPair nvPair: this.appGenerator.getTagProperties ()) {
+			for (NVStringPair nvPair: this.appGenerator.getTagProperties()) {
 				
 				try {
 				
 					// Process for environment variables and internal tags..
 					
-					tagValue = getProcessedValue (dataMap, nvPair.getValue ());
+					tagValue = getProcessedValue (dataMap, nvPair.getValue());
 					
 					
 					// Store...
 					
-					processedTagsProps.setProperty (nvPair.getName (), tagValue);
+					processedTagsProps.setProperty (nvPair.getName(), tagValue);
 					
 				}
 				catch (ExceptionValidation e) {
 					
 					// record error. handle later.
 					
-					exceptionVal = ValidationUtils.addMessage (exceptionVal, IAppGeneratorConst.MESSAGE_INVALID_TAG.cloneMe (nvPair.getName ()));
+					exceptionVal = ValidationUtils.addMessage (exceptionVal, IAppGeneratorConst.MESSAGE_INVALID_TAG.cloneMe (nvPair.getName()));
 				}
 			}
 		}	
@@ -775,14 +785,21 @@ public class AppGeneratorController {
 	 * Creates application name tags in all the correct forms.
 	 * 
 	 */
-	private void setGeneratorDefaults () {
+	private void setGeneratorDefaults() {
 		
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
 		// ///////////////////////////////////////////////////////////////
 
-		String	appName				= null;
-
+		String	appName						= null;
+		String	appNameDots					= null;
+		String	appNameDotsLowerCase		= null;
+		String	appNameHyphens				= null;
+		String	appNameHyphensLowerCase		= null;
+		String	appNameNoSpaces				= null;
+		String	appNameNoSpacesLowerCase	= null;
+		String	appNameUnderscores			= null;
+		String	appNameUnderscoresLowerCase	= null;
 
 		// ///////////////////////////////////////////////////////////////
 		//   Code
@@ -790,32 +807,86 @@ public class AppGeneratorController {
 		
 		// Locate Template Directory...
 		
-		this.appGenerator.setGeneratorDir			(AppGeneratorUtils.getGeneratorDirectory (this.appGenerator.getGeneratorName ()));
+		this.appGenerator.setGeneratorDir			(AppGeneratorUtils.getGeneratorDirectory (this.appGenerator.getGeneratorName()));
 		
 		
 		// Set App Name...
 		
-		appName = this.appGenerator.getAppName ();
+		appName = this.appGenerator.getAppName();
 		
 		this.appGenerator.getProcessedTagProperties	().setProperty (IAppGeneratorConst.TAG_APP_NAME, appName);
 		this.appGenerator.getTagProperties			().setProperty (IAppGeneratorConst.TAG_APP_NAME, appName);
 
 		
+		// Set App Name - Dots...
+		
+		appNameDots = appName.replace(' ', '.');
+		
+		this.appGenerator.getProcessedTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_DOTS, appNameDots);
+		this.appGenerator.getTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_DOTS, appNameDots);
+
+		
+		// Set App Name - Dots, Lower Case
+		
+		appNameDotsLowerCase = appNameDots.toLowerCase();
+		
+		this.appGenerator.getProcessedTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_DOTS_LOWER_CASE, appNameDotsLowerCase);
+		this.appGenerator.getTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_DOTS_LOWER_CASE, appNameDotsLowerCase);
+
+
+		// Set App Name - Hyphens...
+		
+		appNameHyphens = appName.replace(' ', '-');
+		
+		this.appGenerator.getProcessedTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_HYPHENS, appNameHyphens);
+		this.appGenerator.getTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_HYPHENS, appNameHyphens);
+
+		
+		// Set App Name - Hyphens, Lower Case
+		
+		appNameHyphensLowerCase = appNameHyphens.toLowerCase();
+		
+		this.appGenerator.getProcessedTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_HYPHENS_LOWER_CASE, appNameHyphensLowerCase);
+		this.appGenerator.getTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_HYPHENS_LOWER_CASE, appNameHyphensLowerCase);
+
+
 		// Set App Name - No Spaces...
 		
-		appName = StringUtils.strip (appName, ' ');
+		appNameNoSpaces = StringUtils.strip (appName, ' ');
 		
-		this.appGenerator.getProcessedTagProperties	().setProperty (IAppGeneratorConst.TAG_APP_NAME_NO_SPACES, appName);
-		this.appGenerator.getTagProperties			().setProperty (IAppGeneratorConst.TAG_APP_NAME_NO_SPACES, appName);
+		this.appGenerator.getProcessedTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_NO_SPACES, appNameNoSpaces);
+		this.appGenerator.getTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_NO_SPACES, appNameNoSpaces);
 
 		
 		// Set App Name - No Spaces, Lower Case
 		
-		appName = appName.toLowerCase ();
+		appNameNoSpacesLowerCase = appNameNoSpaces.toLowerCase();
 		
-		this.appGenerator.getProcessedTagProperties	().setProperty (IAppGeneratorConst.TAG_APP_NAME_NO_SPACES_LOWER_CASE, appName);
-		this.appGenerator.getTagProperties			().setProperty (IAppGeneratorConst.TAG_APP_NAME_NO_SPACES_LOWER_CASE, appName);
+		this.appGenerator.getProcessedTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_NO_SPACES_LOWER_CASE, appNameNoSpacesLowerCase);
+		this.appGenerator.getTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_NO_SPACES_LOWER_CASE, appNameNoSpacesLowerCase);
 
+		
+		// Set App Name - Underscores...
+		
+		appNameUnderscores = appName.replace(' ', '_');
+		
+		this.appGenerator.getProcessedTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_UNDERSCORES, appNameUnderscores);
+		this.appGenerator.getTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_UNDERSCORES, appNameUnderscores);
+
+		
+		// Set App Name - Underscores, Lower Case
+		
+		appNameUnderscoresLowerCase = appNameUnderscores.toLowerCase();
+		
+		this.appGenerator.getProcessedTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_UNDERSCORES_LOWER_CASE, appNameUnderscoresLowerCase);
+		this.appGenerator.getTagProperties().setProperty (IAppGeneratorConst.TAG_APP_NAME_UNDERSCORES_LOWER_CASE, appNameUnderscoresLowerCase);
+		
+		
+		// Set Today's Date:
+		
+		this.appGenerator.getTagProperties().setProperty(IAppGeneratorConst.TAG_DATE_NOW, DateUtils.getISODate());
+		this.appGenerator.getTagProperties().setProperty(IAppGeneratorConst.TAG_DATE_NOW_DASH, DateUtils.getISODashDate());
+		this.appGenerator.getTagProperties().setProperty(IAppGeneratorConst.TAG_DATE_NOW_DOT, DateUtils.getISODotDate());
 	}
 	
 	
@@ -823,12 +894,12 @@ public class AppGeneratorController {
 	 * Copies the calling application tags into the general tags (stored in tagProperties).
 	 * 
 	 */
-	private void copyAppTagsToGeneralTags () {
+	private void copyAppTagsToGeneralTags() {
 	
 		
-		for (NVStringPair vPair: this.appGenerator.getAppTagProperties ()) {
+		for (NVStringPair vPair: this.appGenerator.getAppTagProperties()) {
 			
-			this.appGenerator.getTagProperties ().setProperty (vPair);
+			this.appGenerator.getTagProperties().setProperty (vPair);
 		}
 	}
 }

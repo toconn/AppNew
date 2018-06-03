@@ -65,7 +65,7 @@ public class FreeMarkerComp {
 		catch (TemplateException e) {
 			
 			exceptionValidation = new ExceptionValidation (IFreeMarkerConst.MESSAGE_TEMPLATE_INVALID);
-			exceptionValidation.addMessage (IExceptionConst.MESSAGE_UNFORMATTED.cloneMe (e.getMessage ()));
+			exceptionValidation.addMessage (IExceptionConst.MESSAGE_UNFORMATTED.cloneMe (e.getMessage()));
 			exceptionValidation.addMessage (IExceptionConst.MESSAGE_FILE_NAME.cloneMe (templateFileName));
 
 			throw exceptionValidation;
@@ -73,7 +73,7 @@ public class FreeMarkerComp {
 		catch (IOException e) {
 
 			exceptionValidation = new ExceptionValidation (IFreeMarkerConst.MESSAGE_TEMPLATE_INVALID);
-			exceptionValidation.addMessage (IExceptionConst.MESSAGE_UNFORMATTED.cloneMe (e.getMessage ()));
+			exceptionValidation.addMessage (IExceptionConst.MESSAGE_UNFORMATTED.cloneMe (e.getMessage()));
 			exceptionValidation.addMessage (IExceptionConst.MESSAGE_FILE_NAME.cloneMe (templateFileName));
 
 			throw exceptionValidation;
@@ -107,7 +107,7 @@ public class FreeMarkerComp {
 			fmConfiguration.setObjectWrapper (new DefaultObjectWrapper());
 
 			fmTemplate		= new Template ("name", new StringReader (templateString),  fmConfiguration);
-			writer			= new StringWriter ();
+			writer			= new StringWriter();
 			
 			fmTemplate.process (templateDataMap, writer);
 		}
@@ -120,7 +120,7 @@ public class FreeMarkerComp {
 			throw new ExceptionValidation (IFreeMarkerConst.MESSAGE_TEMPLATE_INVALID);
 		}
 		
-		return writer.toString ();
+		return writer.toString();
 	}
 	
 	
@@ -144,7 +144,7 @@ public class FreeMarkerComp {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 		
-		dataMap = new HashMap ();
+		dataMap = new HashMap();
 		
 		for (NVStringPair nvPair: properties) {
 			
@@ -177,7 +177,7 @@ public class FreeMarkerComp {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 
-		currentDate	= new Date ();
+		currentDate	= new Date();
 		
 
 		// Add defaults...

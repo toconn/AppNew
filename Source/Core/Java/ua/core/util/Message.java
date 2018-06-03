@@ -56,7 +56,7 @@ public class Message implements Cloneable {
 
 		this.messageId = messageId;
 		this.format = format;
-		this.parameterArray = new Object[] {string1, new Long (long1).toString ()};
+		this.parameterArray = new Object[] {string1, new Long (long1).toString()};
 	}
 
 	
@@ -104,7 +104,7 @@ public class Message implements Cloneable {
 	}
 
 	
-	public Message cloneMe () {
+	public Message cloneMe() {
 		
 		return new Message (this.messageId, this.format);
 	}

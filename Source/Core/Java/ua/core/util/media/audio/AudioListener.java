@@ -33,13 +33,13 @@ public class AudioListener implements LineListener {
 	}
 
 	
-    public synchronized void waitUntilDone () {
+    public synchronized void waitUntilDone() {
     	
     	while (! this.done) {
     		
     		try {
     			
-				wait ();
+				wait();
 			}
 			catch (InterruptedException e) {
 

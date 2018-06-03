@@ -277,7 +277,7 @@ public class LogService {
 		// //////////////////////////////////////////////////////////////
 		
 		
-		stringList = new StringList ();
+		stringList = new StringList();
 		
 		// Display error details...
 

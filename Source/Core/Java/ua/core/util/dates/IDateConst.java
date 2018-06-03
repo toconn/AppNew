@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 public interface IDateConst {
 	
 	String				DATE_FORMAT_ISO				= "yyyy/MM/dd";
+	String				DATE_FORMAT_ISO_DASH		= "yyyy-MM-dd";
 	String				DATE_FORMAT_ISO_DOT			= "yyyy.MM.dd";
 	String				DATE_FORMAT_ISO_FULL		= "yyyy/MM/dd HH:mm:ss";
 	String				DATE_FORMAT_RFC822			= "E, dd MMM yyyy HH:mm:ss Z";

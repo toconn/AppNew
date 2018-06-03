@@ -29,13 +29,13 @@ public class UaUrlConnection {
 
 
 	
-	public String getUrlString () {
+	public String getUrlString() {
 	
 		return urlString;
 	}
 	
 	
-	public String read () throws IOException {
+	public String read() throws IOException {
 		
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -54,7 +54,7 @@ public class UaUrlConnection {
 		connectionReader = new BufferedReader (new InputStreamReader (this.urlConnection.getInputStream()));
 
 		
-		dataBuilder = new StringBuilder ();
+		dataBuilder = new StringBuilder();
 	
 		while ((dataLine = connectionReader.readLine()) != null) {
 

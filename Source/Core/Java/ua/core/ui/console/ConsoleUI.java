@@ -12,7 +12,7 @@ public class ConsoleUI extends UIBase implements IUI {
 		setLocale (locale);
 	}
 	
-	public void print () {
+	public void print() {
 		
 		System.out.println ("");
 	}

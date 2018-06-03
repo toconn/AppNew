@@ -29,8 +29,8 @@ public abstract class UIBase {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 
-		stringBuilder	= new StringBuilder ();
-		lineSeparator	= OSUtils.getLineSeparator ();
+		stringBuilder	= new StringBuilder();
+		lineSeparator	= OSUtils.getLineSeparator();
 		
 		first = true;
 		
@@ -49,7 +49,7 @@ public abstract class UIBase {
 			stringBuilder.append (text);
 		}
 		
-		print (stringBuilder.toString ());
+		print (stringBuilder.toString());
 	}
 
 	
@@ -68,8 +68,8 @@ public abstract class UIBase {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 
-		stringBuilder	= new StringBuilder ();
-		lineSeparator	= OSUtils.getLineSeparator ();
+		stringBuilder	= new StringBuilder();
+		lineSeparator	= OSUtils.getLineSeparator();
 		
 		first = true;
 		
@@ -88,7 +88,7 @@ public abstract class UIBase {
 			stringBuilder.append (text);
 		}
 		
-		print (stringBuilder.toString ());
+		print (stringBuilder.toString());
 	}
 
 	
@@ -107,8 +107,8 @@ public abstract class UIBase {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 
-		stringBuilder	= new StringBuilder ();
-		lineSeparator	= OSUtils.getLineSeparator ();
+		stringBuilder	= new StringBuilder();
+		lineSeparator	= OSUtils.getLineSeparator();
 		
 		first = true;
 		
@@ -127,7 +127,7 @@ public abstract class UIBase {
 			stringBuilder.append (text);
 		}
 		
-		print (stringBuilder.toString ());
+		print (stringBuilder.toString());
 	}
 
 	

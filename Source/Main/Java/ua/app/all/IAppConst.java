@@ -11,10 +11,10 @@ public interface IAppConst {
 	
 	public static final String APP_NAME					= "App.Name";
 	public static final String APP_VERSION				= "App.Version";
-	public static final String APP_CREATION_DATE		= "App.Creation.Date";
+	public static final String APP_CREATION_DATE			= "App.Creation.Date";
 	public static final String APP_BUILD_DATE			= "App.Build.Date";
 	public static final String APP_BUILD_NUMBER			= "App.Build.Number";
-	public static final String APP_AUTHOR               = "App.Author";
+	public static final String APP_AUTHOR				= "App.Author";
 	
 	public static final String APP_CONFIG_FILE_NAME		= "App.Config.File.Name";
 	public static final String APP_CONFIG_FILE			= "App.Config.File";
@@ -26,13 +26,13 @@ public interface IAppConst {
 	public static final String PARAM_IDENTIFIER			= "-";
 	
     public static final String PARAM_APP_INFO			= "AppInfo";
-    public static final String PARAM_APP_SETTINGS		= "AppSettings";
-    public static final String PARAM_CONFIG_SETTINGS	= "ConfigSettings";		
+    public static final String PARAM_APP_SETTINGS			= "AppSettings";
+    public static final String PARAM_CONFIG_SETTINGS		= "ConfigSettings";		
     public static final String PARAM_HELP				= "Help";
     public static final String PARAM_HELP2				= "?";
     public static final String PARAM_HELP_ALL			= "HelpAll";
     public static final String PARAM_PARAMS				= "Params";
-    public static final String PARAM_VERSION_HISTORY	= "VersionHistory";
+    public static final String PARAM_VERSION_HISTORY		= "VersionHistory";
     
     public static final String TEXT_INDENT				= "    ";
     
@@ -43,9 +43,9 @@ public interface IAppConst {
     	new ParamDef (PARAM_HELP_ALL,			0, new Message ("A10000012", "View all help and application information.")),
     	new ParamDef (PARAM_APP_INFO,			0, new Message ("A10000013", "View application version info.")),
     	new ParamDef (PARAM_APP_SETTINGS,		0, new Message ("A10000014", "View the application settings.")),
-    	new ParamDef (PARAM_CONFIG_SETTINGS,	0, new Message ("A10000015", "View the configuration settings.")),
+    	new ParamDef (PARAM_CONFIG_SETTINGS,		0, new Message ("A10000015", "View the configuration settings.")),
     	new ParamDef (PARAM_PARAMS,				0, new Message ("A10000016", "View the parameters sent to the program at startup.")),
-    	new ParamDef (PARAM_VERSION_HISTORY,	0, new Message ("A10000017", "View the application version history.")),
+    	new ParamDef (PARAM_VERSION_HISTORY,		0, new Message ("A10000017", "View the application version history.")),
     };
     
     public static final Locale LOCALE_DEFAULT			= Locale.US;

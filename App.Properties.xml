@@ -3,16 +3,14 @@
 
 	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
 
-
 	<property name="AppName"            value="AppNew"            />
 	<property name="AppExtension"       value="jarc"              />
-
-	<property name="Version"            value="v 01.00.04"        />
+	<property name="Version"            value="v 01.00.07"        />
 
 	<property name="ExeDir"             location="/Users/Tadhg/Apps/Tadhg.Scripts"    />
 	
 
-	<property name="hasSourceShared"	value="1"                  />
+	<property name="hasSourceShared"		value="1"                  />
 	<property name="hasSourceTest"      value="0"                  />
 	
 	<property name="includeLibs"        value="1"                  />

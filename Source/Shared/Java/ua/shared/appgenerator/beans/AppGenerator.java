@@ -22,7 +22,7 @@ public class AppGenerator {
 	private UaProperties				appTagProperties			= null;
 	
 
-	public AppGenerator () {
+	public AppGenerator() {
 		
 		this.directoryCopyNVList		= new ArrayList <NVStringPair>();
 		this.directoryCreateStringList	= new StringList();
@@ -33,55 +33,55 @@ public class AppGenerator {
 	}
 
 	
-	public String getAppName () {
+	public String getAppName() {
 	
 		return appName;
 	}
 
 
-	public UaProperties getAppTagProperties () {
+	public UaProperties getAppTagProperties() {
 	
 		return appTagProperties;
 	}
 	
 	
-	public ArrayList <NVStringPair> getDirectoryCopyNVList () {
+	public ArrayList <NVStringPair> getDirectoryCopyNVList() {
 	
 		return directoryCopyNVList;
 	}
 	
 	
-	public StringList getDirectoryCreateStringList () {
+	public StringList getDirectoryCreateStringList() {
 	
 		return directoryCreateStringList;
 	}
 	
 	
-	public String getGeneratorDir () {
+	public String getGeneratorDir() {
 	
 		return generatorDir;
 	}
 
 
-	public String getGeneratorName () {
+	public String getGeneratorName() {
 	
 		return generatorName;
 	}
 
 	
-	public UaProperties getProcessedTagProperties () {
+	public UaProperties getProcessedTagProperties() {
 	
 		return processedTagProperties;
 	}
 
 	
-	public UaProperties getTagProperties () {
+	public UaProperties getTagProperties() {
 	
 		return tagProperties;
 	}
 
 
-	public ArrayList <NVStringPair> getTemplateNVList () {
+	public ArrayList <NVStringPair> getTemplateNVList() {
 	
 		return templateNVList;
 	}

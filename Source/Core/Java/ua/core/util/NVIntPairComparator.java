@@ -25,7 +25,7 @@ public class NVIntPairComparator implements Comparator <NVIntPair> {
  */
 public NVIntPairComparator (char sortKey) {
 
-	super ();
+	super();
 
 	this.sortKey = sortKey;
 	

@@ -50,7 +50,7 @@ public class ShellService {
 			// execName exists as a file (no included parameters).
 			// Create list with just the one item...
 			
-			execParamList = new ArrayList <String> ();
+			execParamList = new ArrayList <String>();
 			execParamList.add (command);
 		}
 		
@@ -70,7 +70,7 @@ public class ShellService {
 				// execName exists as a file (no included parameters).
 				// Create list with just the one item...
 				
-				paramList = new ArrayList <String> ();
+				paramList = new ArrayList <String>();
 				paramList.add (parameters);
 			}
 		}
@@ -98,7 +98,7 @@ public class ShellService {
 	
 	public static void executeAudio (String fileName) {
 		
-		(new AudioPlayer ()).playAsync (fileName);
+		(new AudioPlayer()).playAsync (fileName);
 	}
 	
 	
@@ -333,9 +333,9 @@ public class ShellService {
 	}
 	
 	
-	public static String getConfigFileName () {
+	public static String getConfigFileName() {
 		
-		return Store.shell.getConfigFileName ();
+		return Store.shell.getConfigFileName();
 	}
 	
 	
@@ -448,7 +448,7 @@ public class ShellService {
 	 * @throws ExceptionRuntime
 	 * @throws ExceptionConfigNotFound
 	 */
-	public static void init () throws ExceptionRuntime, ExceptionConfigNotFound {
+	public static void init() throws ExceptionRuntime, ExceptionConfigNotFound {
 		
 		///////////////////////////////////////////
 		// Declarations:
@@ -487,11 +487,11 @@ public class ShellService {
 			
 			if (CollectionUtils.isNonEmpty (shellConfigFileList)) {
 				
-				shellConfigFileNames	= shellConfigFileList.toString ();
+				shellConfigFileNames	= shellConfigFileList.toString();
 			
 				for (String fileName: shellConfigFileList) {
 					
-					fileProperties = new UaProperties ();
+					fileProperties = new UaProperties();
 					fileProperties.load (fileName);
 					
 					shellProperties.setProperties (fileProperties);	
@@ -541,7 +541,7 @@ public class ShellService {
 				
 		try {
 			processBuilder	= new ProcessBuilder (execParamList);
-			processBuilder.start ();	
+			processBuilder.start();	
 		}
 		catch (IOException e) {
 

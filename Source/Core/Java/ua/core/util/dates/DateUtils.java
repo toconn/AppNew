@@ -242,7 +242,7 @@ public class DateUtils {
 	 * 
 	 * @return
 	 */
-	public static String getISODate () {
+	public static String getISODate() {
 		
 		return getISODate (new Date());
 	}
@@ -281,13 +281,56 @@ public class DateUtils {
 		return	isoDateString;
 	}
 	
-	
 	/**
-	 * Returns the current date in ISO format (YYYY-MM-DD)
+	 * Returns the current date in yyyy-mm-dd format.
 	 * 
 	 * @return
 	 */
-	public static String getISODotDate () {
+	public static String getISODashDate() {
+		
+		return getISODashDate (new Date());
+	}
+	
+	
+	/**
+	 * Returns the date in yyyy-mm-dd format.
+	 * 
+	 * @param date
+	 * @return
+	 */
+	public static String getISODashDate (Date date) {
+		
+		// ///////////////////////////////////////////////////////////////
+		//   Declarations
+		// ///////////////////////////////////////////////////////////////
+
+		/////////////////////////////////
+		// Declarations:
+		/////////////////////////////////
+		
+		SimpleDateFormat	dateFormat		= null;
+		
+		String				isoDateString	= null;
+
+
+		// ///////////////////////////////////////////////////////////////
+		//   Code
+		// ///////////////////////////////////////////////////////////////
+
+		/////////////////////////////////
+	
+		dateFormat		= new SimpleDateFormat (IDateConst.DATE_FORMAT_ISO_DASH);
+		isoDateString	= dateFormat.format (date);
+
+		return	isoDateString;
+	}
+		
+	/**
+	 * Returns the current date in ISO format with a dot separator(YYYY.MM.DD)
+	 * 
+	 * @return
+	 */
+	public static String getISODotDate() {
 		
 		return getISODotDate (new Date());
 	}

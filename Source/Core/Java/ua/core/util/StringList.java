@@ -291,7 +291,7 @@ public class StringList implements Cloneable, java.io.Serializable, Iterable <St
 	}
 	
 	
-	public StringList cloneMe () {
+	public StringList cloneMe() {
 		
 		
 		// Declarations:
@@ -390,7 +390,7 @@ public class StringList implements Cloneable, java.io.Serializable, Iterable <St
 	}
 	
 	
-	public String[] getArray () {
+	public String[] getArray() {
 		
 		return toArray();
 	}
@@ -408,7 +408,7 @@ public class StringList implements Cloneable, java.io.Serializable, Iterable <St
 	 */
 	public Iterator <String> getIterator() {
 	
-		return iterator ();
+		return iterator();
 	}
 	
 	
@@ -417,7 +417,7 @@ public class StringList implements Cloneable, java.io.Serializable, Iterable <St
 	 * 
 	 * @return
 	 */
-	public StringList getReverseStringList () {
+	public StringList getReverseStringList() {
 		
 
 		// ///////////////////////////////////////////////////////////////
@@ -433,7 +433,7 @@ public class StringList implements Cloneable, java.io.Serializable, Iterable <St
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 
-		reverseList = new StringList ();
+		reverseList = new StringList();
 		
 		for (i = size - 1; i > -1; i--) {
 			
@@ -677,7 +677,7 @@ public class StringList implements Cloneable, java.io.Serializable, Iterable <St
 	}
 	
 	
-	public void sort () {
+	public void sort() {
 		
 		if (size > 0) {
 			

@@ -6,7 +6,7 @@ public class NVPair <ValueType> implements IName {
 	private ValueType	value	= null;
 
 	
-	public NVPair <ValueType> cloneMe () {
+	public NVPair <ValueType> cloneMe() {
 		
 		return new NVPair <ValueType> (this.name, this.value);
 	}
@@ -14,7 +14,7 @@ public class NVPair <ValueType> implements IName {
 	/**
 	 * @return Returns the name.
 	 */
-	public String getName () {
+	public String getName() {
 
 		return name;
 	}
@@ -30,7 +30,7 @@ public class NVPair <ValueType> implements IName {
 	/**
 	 * @return Returns the value.
 	 */
-	public ValueType getValue () {
+	public ValueType getValue() {
 
 		return value;
 	}
@@ -49,7 +49,7 @@ public class NVPair <ValueType> implements IName {
 	 */
 	public NVPair (String name, ValueType value) {
 
-		super ();
+		super();
 		this.name = name;
 		this.value = value;
 	}

@@ -27,7 +27,7 @@ public class AppNewApp implements IApp {
 	}
 	
 	
-	public void init ()  {
+	public void init()  {
 
 		//////////////////////////////////////////////////////////////////
 		// Code
@@ -79,31 +79,31 @@ public class AppNewApp implements IApp {
 			
 			if (AppStore.paramMap.hasKey (IAppNewConst.PARAM_LIST_TEMPLATES)) {
 				
-				showTemplates ();
+				showTemplates();
 			}
 			
 			
 			
 			// Generator Options...
 			
-			appGenInfo		= new AppGeneratorInfo ();			
-			appProperties	= new UaProperties ();
+			appGenInfo		= new AppGeneratorInfo();			
+			appProperties	= new UaProperties();
 			
 			
-			if (defaultParam != null && defaultParam.hasSubParams ()) {
+			if (defaultParam != null && defaultParam.hasSubParams()) {
 			
 
 				// Get User Parameters...
 						
 				// Template Name...
-				appGenInfo.setTemplateName (defaultParam.getSubParam (0));
+				appGenInfo.setTemplateName (defaultParam.getSubParam(0));
 				
 				// App Name...
-				appGenInfo.setAppName (getAppName (defaultParam));
+				appGenInfo.setAppName (getAppName(defaultParam));
 				
 				// Properties - User Override...
 				
-				if (prefixParam != null && prefixParam.hasSubParams ()) {
+				if (prefixParam != null && prefixParam.hasSubParams()) {
 					
 					appProperties.setProperty (IAppGeneratorConst.TAG_PROJECT_DIR_PREFIX, prefixParam.getSubParam (0));
 				}
@@ -124,12 +124,13 @@ public class AppNewApp implements IApp {
 				
 				if (isSuccessful) {
 					
-					AppUI.print ();
-					AppUI.print (IAppNewConst.MESSAGE_APPLICATION_CREATED.cloneMe (appGenInfo.getAppName ()));
+					AppUI.print();
+					AppUI.print (IAppNewConst.MESSAGE_APPLICATION_CREATED.cloneMe (appGenInfo.getAppName()));
+					AppUI.print ("Target directory: \"" + appGeneratorControl.getTargetDirectory() + "\"");
 				}
 				else {
 					
-					AppUI.print ();
+					AppUI.print();
 					AppUI.print (IAppNewConst.MESSAGE_OPERATION_FAILED);
 				}
 			}
@@ -138,12 +139,12 @@ public class AppNewApp implements IApp {
 		}
 		catch (ExceptionValidation e) {
 			
-			AppUI.print (e.getMessageList ());
+			AppUI.print (e.getMessageList());
 		}
 	}
 	
 	
-	public void showTemplates () {
+	public void showTemplates() {
 		
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -160,12 +161,12 @@ public class AppNewApp implements IApp {
 
 		// Retrieve...
 		
-		templateNameList	= AppGeneratorUtils.getGeneratorNameList ();
+		templateNameList	= AppGeneratorUtils.getGeneratorNameList();
 		
 		
 		// Format...
 		
-		displayList			= new StringList ();
+		displayList			= new StringList();
 		
 		displayList.add ("Generator Template Names:");
 		displayList.add ("");
@@ -190,7 +191,7 @@ public class AppNewApp implements IApp {
 		
 		paramArray = defaultParam.getSubparamStringArray();
 		
-		paramList = new ArrayList <String> ();
+		paramList = new ArrayList <String>();
 		isFirst=true;
 
 		for (String paramString : paramArray) {

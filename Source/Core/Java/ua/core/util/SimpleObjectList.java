@@ -12,10 +12,10 @@ public class SimpleObjectList {
 	private Object[]		objectArray	= null;
 
 
-	public SimpleObjectList () {
+	public SimpleObjectList() {
 
-		super ();
-		clear ();
+		super();
+		clear();
 	}
 
 
@@ -74,7 +74,7 @@ public class SimpleObjectList {
 	}
 
 
-	public void clear () {
+	public void clear() {
 
 		size = 0;
 		capacity = 0;
@@ -96,7 +96,7 @@ public class SimpleObjectList {
 	}
 
 
-	public Object[] getArray () {
+	public Object[] getArray() {
 
 		// ///////////////////////////////
 		// Declarations:
@@ -117,7 +117,7 @@ public class SimpleObjectList {
 	}
 
 
-	public int getCount () {
+	public int getCount() {
 
 		return size;
 	}

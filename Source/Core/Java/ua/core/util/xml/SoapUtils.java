@@ -151,7 +151,7 @@ public class SoapUtils {
 	}
 	
 	
-	public static SOAPConnection getSoapConnection () throws UnsupportedOperationException, SOAPException {
+	public static SOAPConnection getSoapConnection() throws UnsupportedOperationException, SOAPException {
 		
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations
@@ -166,14 +166,14 @@ public class SoapUtils {
 		// ///////////////////////////////////////////////////////////////
 		
 		soapConnectionFactory	= SOAPConnectionFactory.newInstance();
-		soapConnection			= soapConnectionFactory.createConnection ();
+		soapConnection			= soapConnectionFactory.createConnection();
 
 		
 		return soapConnection;
 	}
 	
 	
-	public static SOAPMessage getSoapMessage () throws SOAPException {
+	public static SOAPMessage getSoapMessage() throws SOAPException {
 		
 		// ///////////////////////////////////////////////////////////////
 		//   Declarations

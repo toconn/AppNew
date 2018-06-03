@@ -65,23 +65,23 @@ public class DirectoryUtils {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 
-		if (! sourceDirectory.exists ())
+		if (! sourceDirectory.exists())
 			
-			throw new ExceptionItemNotFound (IExceptionConst.MESSAGE_FILE_NOT_FOUND.cloneMe (sourceDirectory.getName ()));
+			throw new ExceptionItemNotFound (IExceptionConst.MESSAGE_FILE_NOT_FOUND.cloneMe (sourceDirectory.getName()));
 			
 		
-		if (sourceDirectory.isDirectory ()) {
+		if (sourceDirectory.isDirectory()) {
 			
 			// Create destination directory...
 			
-			if (! targetDirectory.exists ())
+			if (! targetDirectory.exists())
 				
-				targetDirectory.mkdir ();
+				targetDirectory.mkdir();
 			
 			
 			// Read source directory...
 			
-			dirList = sourceDirectory.list ();
+			dirList = sourceDirectory.list();
 			
 			// Copy contents...
 			
@@ -114,9 +114,9 @@ public class DirectoryUtils {
 
 		file = new File (path);
 
-		if (!file.exists ()) {
+		if (!file.exists()) {
 
-			file.mkdirs ();
+			file.mkdirs();
 		}
 
 	}
@@ -185,7 +185,7 @@ public class DirectoryUtils {
     			
     			if (directoryPathList == null)
     				
-    				directoryPathList = new StringList ();
+    				directoryPathList = new StringList();
     		
     			directoryPathList.add (pathName);
     			break;
@@ -221,7 +221,7 @@ public class DirectoryUtils {
 		// Get directory listing...
 
 		directoryFile		= new File (directory);
-		directoryFileList	= new UaList <File> (directoryFile.listFiles(new FileFilterDirectory ()));
+		directoryFileList	= new UaList <File> (directoryFile.listFiles(new FileFilterDirectory()));
 		
 		
 		return directoryFileList;
@@ -253,7 +253,7 @@ public class DirectoryUtils {
 		// Get directory listing...
 
 		directoryFile		= new File (directory);
-		directoryFileList	= new UaList <File> (directoryFile.listFiles(new FileFilterDirectory ()));
+		directoryFileList	= new UaList <File> (directoryFile.listFiles(new FileFilterDirectory()));
 		
 		
 		// If include subdirectories...
@@ -262,7 +262,7 @@ public class DirectoryUtils {
 		
 			for (File subDirFile : directoryFileList.cloneMe()) {
 				
-				directoryFileList.addAll (getDirectoryDirectoryList (subDirFile.getPath (), includeSubdirectories));
+				directoryFileList.addAll (getDirectoryDirectoryList (subDirFile.getPath(), includeSubdirectories));
 			}
 		}
 		
@@ -336,9 +336,9 @@ public class DirectoryUtils {
 		
 			for (File subFile : directoryFileList.cloneMe()) {
 				
-				if (subFile.isDirectory ()) {
+				if (subFile.isDirectory()) {
 					
-					directoryFileList.addAll (getDirectoryFileList (subFile.getPath (), includeSubdirectories));
+					directoryFileList.addAll (getDirectoryFileList (subFile.getPath(), includeSubdirectories));
 				}
 			}
 		}
@@ -439,7 +439,7 @@ public class DirectoryUtils {
 		// ////////////////////////////////////////////////////////////////
 
 		directoryFile	= new File (directory);
-		dirStringList	= new StringList (directoryFile.list ());
+		dirStringList	= new StringList (directoryFile.list());
 
 		return dirStringList;
 	}
@@ -487,6 +487,6 @@ public class DirectoryUtils {
 
 		directory = new File (directoryName);
 		
-		return (directory.exists () && directory.isDirectory ());
+		return (directory.exists() && directory.isDirectory());
 	}
 }

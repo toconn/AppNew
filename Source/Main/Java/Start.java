@@ -43,12 +43,12 @@ public class Start {
 		
 		try {
 		
-			AppUI.print ();
+			AppUI.print();
 			
 			
     		// Init App....
     		
-    		app.init ();
+    		app.init();
     		
     		
     		// Process Parameters...
@@ -58,7 +58,7 @@ public class Start {
     		
     		// Process Configuration...
     		
-    		app.config ();
+    		app.config();
     		
     		
     		// Display Help, Info...
@@ -68,7 +68,7 @@ public class Start {
     		
     		// Start App...
     		
-    		app.run ();
+    		app.run();
 		}
 		
 		

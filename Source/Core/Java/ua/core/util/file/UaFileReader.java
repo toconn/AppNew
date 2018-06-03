@@ -48,7 +48,7 @@ public class UaFileReader {
 	}
 	
 	
-	public void close () {
+	public void close() {
 		
 		try {
 			
@@ -71,7 +71,7 @@ public class UaFileReader {
 	}
 	
 	
-	public void open () throws ExceptionItemNotFound, ExceptionRuntime {
+	public void open() throws ExceptionItemNotFound, ExceptionRuntime {
 		
 		try {
 			
@@ -118,7 +118,7 @@ public class UaFileReader {
 
 		if (this.bufferedReader != null) {
 			
-			return this.bufferedReader.read ();
+			return this.bufferedReader.read();
 		}
 		else {
 			
@@ -183,7 +183,7 @@ public class UaFileReader {
 			
 			if (this.bufferedReader != null) {
 				
-				return this.bufferedReader.readLine ();
+				return this.bufferedReader.readLine();
 			}
 			else {
 				

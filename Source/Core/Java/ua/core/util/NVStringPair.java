@@ -19,7 +19,7 @@ public class NVStringPair implements IName {
 	public String	value	= null;
 	
 	
-	public NVStringPair cloneMe () {
+	public NVStringPair cloneMe() {
 
 		return new NVStringPair (this.name, this.value);
 	}
@@ -27,7 +27,7 @@ public class NVStringPair implements IName {
 	/**
 	 * @return Returns the name.
 	 */
-	public String getName () {
+	public String getName() {
 
 		return name;
 	}
@@ -41,7 +41,7 @@ public class NVStringPair implements IName {
 	/**
 	 * @return Returns the value.
 	 */
-	public String getValue () {
+	public String getValue() {
 
 		return value;
 	}
@@ -58,17 +58,17 @@ public class NVStringPair implements IName {
 	 */
 	public NVStringPair (String name, String value) {
 
-		super ();
+		super();
 		this.name = name;
 		this.value = value;
 	}
-	public NVStringPair () {
+	public NVStringPair() {
 
-		super ();
+		super();
 	}
 
 	@Override
-	public String toString () {
+	public String toString() {
 
 		return "NVStringPair [name=" + name + ", value=" + value + "]";
 	}

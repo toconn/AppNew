@@ -103,7 +103,7 @@ public class ParameterUtils {
 		
 		// MAIN:
 		
-		list = new ArrayList <String> ();
+		list = new ArrayList <String>();
 		
 		if (CollectionUtils.isNonEmpty (textList)) {
 			

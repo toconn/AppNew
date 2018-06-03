@@ -22,7 +22,7 @@ class AudioPlayerThead extends Thread {
 	}
 	
 	
-	public void run () {
+	public void run() {
 		
 		try {
 			

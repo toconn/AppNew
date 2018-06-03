@@ -26,13 +26,13 @@ public class ExceptionRuntime extends ExceptionBase {
 	private	String				methodName			= null;
 	
 	// This array list is used to store non user readable messages intended for system logs.
-	private ArrayList <Message>	errorMessageList	= new ArrayList <Message> ();
+	private ArrayList <Message>	errorMessageList	= new ArrayList <Message>();
 	
 	
 	public ExceptionRuntime (Throwable originalException) {
 	
 		super (originalException);
-		setClassMethodInfo ();
+		setClassMethodInfo();
 		
 		this.originalException	= originalException;
 
@@ -47,7 +47,7 @@ public class ExceptionRuntime extends ExceptionBase {
 	public ExceptionRuntime (Throwable originalException, Message message, Message errorMessage, boolean logError) {
 	
 		super (originalException);
-		setClassMethodInfo ();
+		setClassMethodInfo();
 		
 		this.originalException	= originalException;
 		
@@ -80,7 +80,7 @@ public class ExceptionRuntime extends ExceptionBase {
 	public ExceptionRuntime (Throwable originalException, ArrayList <Message> messageList, ArrayList <Message> errorMessageList, boolean logError) {
 	
 		super (originalException);
-		setClassMethodInfo ();
+		setClassMethodInfo();
 		
 		this.originalException	= originalException;
 
@@ -121,8 +121,8 @@ public class ExceptionRuntime extends ExceptionBase {
 	
 	public ExceptionRuntime (ArrayList <Message> messageList, ArrayList <Message> errorMessageList, boolean logError) {
 	
-		super ();
-		setClassMethodInfo ();
+		super();
+		setClassMethodInfo();
 		
 		if (messageList != null) {
 			
@@ -142,8 +142,8 @@ public class ExceptionRuntime extends ExceptionBase {
 	
 	public ExceptionRuntime (Message errorMessage) {
 	
-		super ();
-		setClassMethodInfo ();
+		super();
+		setClassMethodInfo();
 		
 		if (errorMessage != null) {
 			
@@ -155,8 +155,8 @@ public class ExceptionRuntime extends ExceptionBase {
 	
 	public ExceptionRuntime (Message message, Message errorMessage, boolean logError) {
 	
-		super ();
-		setClassMethodInfo ();
+		super();
+		setClassMethodInfo();
 		
 		if (message != null) {
 			
@@ -177,7 +177,7 @@ public class ExceptionRuntime extends ExceptionBase {
 	/**
 	 * @return Returns the className.
 	 */
-	public String getClassName () {
+	public String getClassName() {
 	
 		return className;
 	}
@@ -185,7 +185,7 @@ public class ExceptionRuntime extends ExceptionBase {
 	/**
 	 * @return Returns the methodName.
 	 */
-	public String getMethodName () {
+	public String getMethodName() {
 	
 		return methodName;
 	}
@@ -206,12 +206,12 @@ public class ExceptionRuntime extends ExceptionBase {
 		this.methodName = methodName;
 	}
 	
-	public Throwable getOriginalException () {
+	public Throwable getOriginalException() {
 		
 		return originalException;
 	}
 	
-	public ArrayList <Message> getErrorMessageList () {
+	public ArrayList <Message> getErrorMessageList() {
 	
 		return errorMessageList;
 	}
@@ -234,7 +234,7 @@ public class ExceptionRuntime extends ExceptionBase {
 			
 			castException = (Exception) originalException;
 			
-			addErrorMessage (IExceptionConst.MESSAGE_UNFORMATTED.cloneMe (castException.getMessage ()));
+			addErrorMessage (IExceptionConst.MESSAGE_UNFORMATTED.cloneMe (castException.getMessage()));
 		}	
 	}
 	
@@ -264,12 +264,12 @@ public class ExceptionRuntime extends ExceptionBase {
 		this.errorMessageList.addAll (errorMessageList);
 	}
 	
-	public Message getExceptionType () {
+	public Message getExceptionType() {
 	
 		return new Message ("10173", "Runtime Exception");
 	}
 	
-	private void setClassMethodInfo () {
+	private void setClassMethodInfo() {
 		
 		this.className	= (Thread.currentThread().getStackTrace()[3].getClassName());
 		this.methodName	= (Thread.currentThread().getStackTrace()[3].getMethodName());

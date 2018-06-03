@@ -25,41 +25,15 @@ public class FileUtils {
 
 	public static final void copyFile (File sourceFile, File destinationFile) throws IOException {
 
-		// //////////////////////////////////////////////////////////////////////////
-		// Declarations:
-		// //////////////////////////////////////////////////////////////////////////
-
-		FileChannel sourceFileChannel		= null;
-		FileChannel destinationFileChannel	= null;
-
-		
-		// //////////////////////////////////////////////////////////////////////////
-		// Code:
-		// //////////////////////////////////////////////////////////////////////////
-
-		if (! destinationFile.exists ()) {
-
-			destinationFile.createNewFile ();
+		if (! destinationFile.exists()) {
+			destinationFile.createNewFile();
 		}
 
-		try {
+		try (FileChannel sourceFileChannel = new FileInputStream (sourceFile).getChannel()) {
+			try (FileChannel destinationFileChannel = new FileOutputStream (destinationFile).getChannel()) {
 
-			sourceFileChannel = new FileInputStream (sourceFile).getChannel ();
-			destinationFileChannel = new FileOutputStream (destinationFile).getChannel ();
-			destinationFileChannel.transferFrom (sourceFileChannel, 0, sourceFileChannel.size ());
-
-			destinationFile.setLastModified (sourceFile.lastModified ());
-		}
-		finally {
-
-			if (sourceFileChannel != null) {
-
-				sourceFileChannel.close ();
-			}
-
-			if (destinationFileChannel != null) {
-
-				destinationFileChannel.close ();
+				destinationFileChannel.transferFrom (sourceFileChannel, 0, sourceFileChannel.size());
+				destinationFile.setLastModified (sourceFile.lastModified());
 			}
 		}
 	}
@@ -84,11 +58,11 @@ public class FileUtils {
 
 			try {
 
-				dummyClass = new NVStringPair ();
-				fileURL = dummyClass.getClass ().getClassLoader ().getResource (fileName);
+				dummyClass = new NVStringPair();
+				fileURL = dummyClass.getClass().getClassLoader().getResource (fileName);
 
 				if (fileURL != null) {
-					filePath = URLDecoder.decode (fileURL.getPath (), IFileConst.FILE_ENCODING_UTF8);
+					filePath = URLDecoder.decode (fileURL.getPath(), IFileConst.FILE_ENCODING_UTF8);
 				}
 
 				if (filePath != null) {
@@ -168,7 +142,7 @@ public class FileUtils {
     			
     			if (filePathList == null)
     				
-    				filePathList = new StringList ();
+    				filePathList = new StringList();
     		
     			filePathList.add (pathName);
     			break;
@@ -239,7 +213,7 @@ public class FileUtils {
 		// ///////////////////////////////
 
 		file = new File (path);
-		newPath = file.getCanonicalPath ();
+		newPath = file.getCanonicalPath();
 
 		return newPath;
 	}
@@ -268,7 +242,7 @@ public class FileUtils {
         
         if (CollectionUtils.isNonEmpty (directoryNameList)) {
         	
-        	fileNameList = new StringList ();
+        	fileNameList = new StringList();
         	
         	for (String directoryName: directoryNameList) {
         		
@@ -318,7 +292,7 @@ public class FileUtils {
 	
 	public static String getFileName (String directoryName, String fileName) {
 		
-		return directoryName + getFileSeparator () + fileName;
+		return directoryName + getFileSeparator() + fileName;
 	}
 	
 
@@ -345,7 +319,7 @@ public class FileUtils {
 
 		file	= new File (fullFileName);
 		
-		return file.getName ();
+		return file.getName();
 	}
 	
 	
@@ -372,11 +346,11 @@ public class FileUtils {
 
 		file	= new File (fullFileName);
 		
-		return file.getParent ();
+		return file.getParent();
 	}	
 
 
-	public static char getFileSeparator () {
+	public static char getFileSeparator() {
 
 		return System.getProperty ("file.separator").charAt (0);
 	}
@@ -398,14 +372,14 @@ public class FileUtils {
 		// ///////////////////////////////
 
 		currentFile = new File (path);
-		currentPath = currentFile.getCanonicalPath ();
+		currentPath = currentFile.getCanonicalPath();
 
 		currentFile = new File (currentPath);
-		parentFile = currentFile.getParentFile ();
+		parentFile = currentFile.getParentFile();
 
 		if (parentFile != null) {
 
-			return parentFile.getCanonicalPath ();
+			return parentFile.getCanonicalPath();
 		}
 		else {
 
@@ -416,9 +390,9 @@ public class FileUtils {
 
 	public static final boolean isAbsolutePath (String path) {
 
-		if (path != null && path.length () > 0) {
+		if (path != null && path.length() > 0) {
 
-			if (isUnixFileSystem ()) {
+			if (isUnixFileSystem()) {
 
 				// Check unix file name...
 
@@ -435,7 +409,7 @@ public class FileUtils {
 
 					return true;
 				}
-				else if (path.length () > 2 && ":".equals (path.substring (1, 2))) {
+				else if (path.length() > 2 && ":".equals (path.substring (1, 2))) {
 
 					return true;
 				}
@@ -448,20 +422,20 @@ public class FileUtils {
 	}
 
 
-	public static boolean isDosFileSystem () {
+	public static boolean isDosFileSystem() {
 
-		return (IFileConst.FILE_SEPARATOR_DOS == getFileSeparator ());
+		return (IFileConst.FILE_SEPARATOR_DOS == getFileSeparator());
 	}
 
 
 	public static boolean isFileExists (String fileName) {
 
-		return (new File (fileName)).exists ();
+		return (new File (fileName)).exists();
 	}
 
 
-	public static boolean isUnixFileSystem () {
+	public static boolean isUnixFileSystem() {
 
-		return (IFileConst.FILE_SEPARATOR_UNIX == getFileSeparator ());
+		return (IFileConst.FILE_SEPARATOR_UNIX == getFileSeparator());
 	}
 }

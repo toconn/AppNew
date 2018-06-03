@@ -29,7 +29,7 @@ public class ExceptionItemNotFound extends ExceptionBase {
 		super (messageList);
 	}
 	
-	public Message getExceptionType () {
+	public Message getExceptionType() {
 	
 		return IExceptionConst.MESSAGE_ITEM_NOT_FOUND_1;
 	}

@@ -91,7 +91,7 @@ public class MessageService {
     	// Code:
     	/////////////////////////////////
     	
-    	messageTextList = new StringList ();
+    	messageTextList = new StringList();
     	
     	// Create formatter...
     	
@@ -169,7 +169,7 @@ public class MessageService {
     	
     	try {
     	
-    		parsedFormatList	= new ArrayList <Object> ();
+    		parsedFormatList	= new ArrayList <Object>();
     		
     	
     		if (! StringUtils.isEmpty (messageText)) {

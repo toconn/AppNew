@@ -13,9 +13,9 @@ public class Shell {
 	
 	public String		shellConfigFileName			= null;
 	
-	public UaProperties	shellCommandProperties		= new UaProperties ();
-	public UaProperties	shellExtensionProperties	= new UaProperties ();
-	public UaProperties	shellLeadProperties			= new UaProperties ();
+	public UaProperties	shellCommandProperties		= new UaProperties();
+	public UaProperties	shellExtensionProperties	= new UaProperties();
+	public UaProperties	shellLeadProperties			= new UaProperties();
 	
 	
 	public Shell (String shellConfigFileName, UaProperties shellCommandProperties, UaProperties shellExtensionProperties, UaProperties shellLeadProperties) {
@@ -28,7 +28,7 @@ public class Shell {
 	}
 	
 	
-	public String getConfigFileName () {
+	public String getConfigFileName() {
 		
 		return this.shellConfigFileName;
 	}
@@ -40,9 +40,9 @@ public class Shell {
 	}
 	
 	
-	public ArrayList <StringList> getExtensionCommandTypeStringListList () {
+	public ArrayList <StringList> getExtensionCommandTypeStringListList() {
 		
-		return CollectionUtils.toStringListArrayList (this.shellExtensionProperties.getPropertyNVList ());
+		return CollectionUtils.toStringListArrayList (this.shellExtensionProperties.getPropertyNVList());
 	}
 	
 	
@@ -73,9 +73,9 @@ public class Shell {
 	}
 
 
-	public ArrayList <StringList> getLeadCommandTypeStringListList () {
+	public ArrayList <StringList> getLeadCommandTypeStringListList() {
 
-		return CollectionUtils.toStringListArrayList (this.shellLeadProperties.getPropertyNVList ());
+		return CollectionUtils.toStringListArrayList (this.shellLeadProperties.getPropertyNVList());
 	}
 
 
@@ -93,9 +93,9 @@ public class Shell {
 	}
 	
 	
-	public ArrayList <StringList> getTypeCommandStringListList () {
+	public ArrayList <StringList> getTypeCommandStringListList() {
 		
-		return CollectionUtils.toStringListArrayList (this.shellCommandProperties.getPropertyNVList ());
+		return CollectionUtils.toStringListArrayList (this.shellCommandProperties.getPropertyNVList());
 	}
 	
 	

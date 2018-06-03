@@ -10,7 +10,7 @@ import ua.core.util.NVStringPairComparator;
 
 public class EnvironmentUtils {
 
-	public static ArrayList <NVStringPair> getSortedSystemPropertiesNVList () {
+	public static ArrayList <NVStringPair> getSortedSystemPropertiesNVList() {
 		
 		//////////////////////////////////////////////////////////////////
 		// Declarations
@@ -23,7 +23,7 @@ public class EnvironmentUtils {
 		// Code
 		//////////////////////////////////////////////////////////////////
 
-		nvPairList = getSystemPropertiesNVList ();
+		nvPairList = getSystemPropertiesNVList();
 		
 		Collections.sort (nvPairList, new NVStringPairComparator (NVStringPairComparator.SORT_KEY_NAME));
 		
@@ -37,7 +37,7 @@ public class EnvironmentUtils {
 	}
 
 
-	public static ArrayList <NVStringPair> getSystemPropertiesNVList () {
+	public static ArrayList <NVStringPair> getSystemPropertiesNVList() {
 		
 
 		//////////////////////////////////////////////////////////////////
@@ -53,7 +53,7 @@ public class EnvironmentUtils {
 		// Code
 		//////////////////////////////////////////////////////////////////
 
-		nvPairList = new ArrayList <NVStringPair> ();
+		nvPairList = new ArrayList <NVStringPair>();
 		sysProperties	= System.getProperties();
 		
 		for (String propertyName : sysProperties.stringPropertyNames()) {

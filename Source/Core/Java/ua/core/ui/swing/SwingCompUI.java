@@ -24,7 +24,7 @@ public class SwingCompUI implements ICompUI {
 	}
 	
 	
-	public Locale getLocale () {
+	public Locale getLocale() {
 		
 		return this.ui.getLocale();
 	}
@@ -44,12 +44,12 @@ public class SwingCompUI implements ICompUI {
 
 	public void reportError (ExceptionRuntime e) {
 
-		this.ui.print (ExceptionUtils.getExceptionStringList (e, getLocale ()));
+		this.ui.print (ExceptionUtils.getExceptionStringList (e, getLocale()));
 	}
 
 
 	public void reportValidationError (ExceptionValidation e) {
 
-		this.ui.print (MessageService.getFormattedMessageList (getLocale(), e.getMessageList ()));
+		this.ui.print (MessageService.getFormattedMessageList (getLocale(), e.getMessageList()));
 	}
 }

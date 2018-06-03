@@ -19,7 +19,7 @@ public class AppGeneratorUtils {
 	 * 
 	 * @return
 	 */
-	public static String getAppGeneratorConfigFile () {
+	public static String getAppGeneratorConfigFile() {
 		
 		return EnvironmentService.locateFile (IAppGeneratorConst.APP_CONFIG_FILE_DIR, IAppGeneratorConst.APP_CONFIG_FILE_NAME);
 	}
@@ -32,7 +32,7 @@ public class AppGeneratorUtils {
 	 * 
 	 * @return
 	 */
-	public static StringList getAppGeneratorConfigPathList () {
+	public static StringList getAppGeneratorConfigPathList() {
 		
 		return EnvironmentService.locateDirectory (IAppGeneratorConst.APP_CONFIG_FILE_DIR);
 	}
@@ -72,7 +72,7 @@ public class AppGeneratorUtils {
 	 * 
 	 * @return
 	 */
-	public static StringList getGeneratorNameList () {
+	public static StringList getGeneratorNameList() {
 		
 
 		// ///////////////////////////////////////////////////////////////
@@ -94,7 +94,7 @@ public class AppGeneratorUtils {
 		configPathList = getAppGeneratorConfigPathList();
 		
 		
-		generatorNameMap	= new UaMap <String> ();
+		generatorNameMap	= new UaMap <String>();
 		
 		
 		for (String configPath: configPathList) {
@@ -103,7 +103,7 @@ public class AppGeneratorUtils {
 			
 			for (File dirFile: dirFileList) {
 				
-				dirName = dirFile.getName ();
+				dirName = dirFile.getName();
 				
 				// Add to name map as long as it isn't a backup directory...
 				
@@ -115,6 +115,6 @@ public class AppGeneratorUtils {
 		}
 		
 		
-		return generatorNameMap.getSortedKeyList ();	// Return map keys. Not interested in the map data.
+		return generatorNameMap.getSortedKeyList();	// Return map keys. Not interested in the map data.
 	}
 }

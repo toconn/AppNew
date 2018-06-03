@@ -30,7 +30,7 @@ public class ExceptionItemAlreadyExists extends ExceptionBase {
 		super (messageList);
 	}
 	
-	public Message getExceptionType () {
+	public Message getExceptionType() {
 	
 		return IExceptionConst.MESSAGE_ITEM_ALREADY_EXISTS;
 	}

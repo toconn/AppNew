@@ -41,13 +41,13 @@ public class ExceptionValidation extends ExceptionBase {
 	}
 	
 	
-	public ExceptionValidation cloneMe () {
+	public ExceptionValidation cloneMe() {
 
-		return new ExceptionValidation (this.getMessageList ());
+		return new ExceptionValidation (this.getMessageList());
 	}
 	
 	
-	public Message getExceptionType () {
+	public Message getExceptionType() {
 	
 		return new Message ("10171", "Validation Error");
 	}

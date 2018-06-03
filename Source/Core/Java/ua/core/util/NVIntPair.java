@@ -19,7 +19,7 @@ public class NVIntPair implements IName {
 	private int		value;
 
 	
-	public NVIntPair	cloneMe () {
+	public NVIntPair	cloneMe() {
 		
 		return new NVIntPair (this.name, this.value);
 	}
@@ -28,7 +28,7 @@ public class NVIntPair implements IName {
 	/**
 	 * @return Returns the name.
 	 */
-	public String getName () {
+	public String getName() {
 
 		return name;
 	}
@@ -46,7 +46,7 @@ public class NVIntPair implements IName {
 	/**
 	 * @return Returns the value.
 	 */
-	public int getValue () {
+	public int getValue() {
 
 		return value;
 	}
@@ -67,7 +67,7 @@ public class NVIntPair implements IName {
 	 */
 	public NVIntPair (String name, int value) {
 
-		super ();
+		super();
 		this.name = name;
 		this.value = value;
 	}

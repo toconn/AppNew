@@ -36,9 +36,9 @@ public class UaListMap <ValueType> {
 	/**
 	 * Hashray constructor comment.
 	 */
-	public UaListMap () {
+	public UaListMap() {
 
-		super ();
+		super();
 
 		init (20);
 	}
@@ -63,7 +63,7 @@ public class UaListMap <ValueType> {
 		itemList.add (nvPair);
 
 		// Update the indexes.
-		indexMap.put (name, new Integer (itemList.size () - 1));
+		indexMap.put (name, new Integer (itemList.size() - 1));
 
 	}
 
@@ -84,7 +84,7 @@ public class UaListMap <ValueType> {
 			itemList.add (nvPair);
 
 			// Update the indexes.
-			indexMap.put (name, new Integer (itemList.size () - 1));
+			indexMap.put (name, new Integer (itemList.size() - 1));
 
 		}
 		else {
@@ -109,10 +109,10 @@ public class UaListMap <ValueType> {
 	 * @return:
 	 * 
 	 */
-	public void clear () {
+	public void clear() {
 
-		itemList.clear ();
-		indexMap.clear ();
+		itemList.clear();
+		indexMap.clear();
 	}
 
 
@@ -138,7 +138,7 @@ public class UaListMap <ValueType> {
 
 		if (indexNumber != null) {
 
-			return indexNumber.intValue ();
+			return indexNumber.intValue();
 		}
 		else {
 
@@ -169,7 +169,7 @@ public class UaListMap <ValueType> {
 
 		if (nvPair != null) {
 
-			return nvPair.getValue ();
+			return nvPair.getValue();
 		}
 		else {
 
@@ -228,10 +228,10 @@ public class UaListMap <ValueType> {
 		// Code:
 		// /////////////////////////////////////////
 
-		if (index < itemList.size () && index > -1) {
+		if (index < itemList.size() && index > -1) {
 
 			nvPair = getNVPair (index);
-			return nvPair.getName ();
+			return nvPair.getName();
 		}
 		else {
 
@@ -267,19 +267,19 @@ public class UaListMap <ValueType> {
 		// Code:
 		// /////////////////////////////////////////
 
-		if (index < itemList.size () && index > -1) {
+		if (index < itemList.size() && index > -1) {
 
 			nvPair = getNVPair (index);
 
 			// Remove the item from the list
 			itemList.remove (index);
-			indexMap.remove (nvPair.getName ());
+			indexMap.remove (nvPair.getName());
 
 			// Update the index values in hash.
 
-			for (i = index; i < itemList.size (); i++) {
+			for (i = index; i < itemList.size(); i++) {
 
-				indexMap.put (getNVPair (i).getName (), new Integer (i));
+				indexMap.put (getNVPair (i).getName(), new Integer (i));
 			}
 
 		}
@@ -317,9 +317,9 @@ public class UaListMap <ValueType> {
 	 * 
 	 * @return int
 	 */
-	public int size () {
+	public int size() {
 
-		return itemList.size ();
+		return itemList.size();
 	}
 
 
@@ -340,9 +340,9 @@ public class UaListMap <ValueType> {
 	}
 
 
-	public Iterator <ValueType> getIterator () {
+	public Iterator <ValueType> getIterator() {
 
-		return this.iterator ();
+		return this.iterator();
 	}
 
 
@@ -370,7 +370,7 @@ public class UaListMap <ValueType> {
 	}
 
 
-	public Iterator <ValueType> iterator () {
+	public Iterator <ValueType> iterator() {
 
 		// /////////////////////////////////////////
 		// Declarations:
@@ -385,12 +385,12 @@ public class UaListMap <ValueType> {
 		// Code:
 		// /////////////////////////////////////////
 
-		iterator = new UaIterator <ValueType> (itemList.size ());
+		iterator = new UaIterator <ValueType> (itemList.size());
 
-		for (index = 0; index < itemList.size (); index++) {
+		for (index = 0; index < itemList.size(); index++) {
 
 			nvPair = getNVPair (index);
-			iterator.add (nvPair.getValue ());
+			iterator.add (nvPair.getValue());
 		}
 
 		return iterator;

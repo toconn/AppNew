@@ -27,13 +27,13 @@ public class UaTransactionWrapper implements IUaTransaction {
 	
 
 	
-	public void begin () {
+	public void begin() {
 		
 		if (this.transCount == 0) {
 			
 			// Start the da transaction if first time here.
 			
-			this.transaction.begin ();
+			this.transaction.begin();
 			this.transRolledBack	= false;
 		}
 		
@@ -45,7 +45,7 @@ public class UaTransactionWrapper implements IUaTransaction {
 
 	
 
-	public void commit () {
+	public void commit() {
 
 		if (this.transCount > 0)
 			
@@ -58,7 +58,7 @@ public class UaTransactionWrapper implements IUaTransaction {
 			
 			// If the counter is 0, commit the transaction.
 			
-			doCommit ();
+			doCommit();
 	}
 	
 	
@@ -68,15 +68,15 @@ public class UaTransactionWrapper implements IUaTransaction {
 	 * rollback was called.
 	 * 
 	 */
-	private void doCommit (){
+	private void doCommit(){
 		
 		if (! this.transRolledBack)
 			
-			this.transaction.commit ();
+			this.transaction.commit();
 		
 		else
 			
-			this.transaction.rollback ();
+			this.transaction.rollback();
 		
 		
 		// Reset transaction defaults.
@@ -87,17 +87,17 @@ public class UaTransactionWrapper implements IUaTransaction {
 
 
 	
-	public void forceCommit () {
+	public void forceCommit() {
 
-		doCommit ();
+		doCommit();
 	}
 
 
 	
-	public void rollback () {
+	public void rollback() {
 		
 		this.transRolledBack = true;
 
-		commit ();
+		commit();
 	}
 }

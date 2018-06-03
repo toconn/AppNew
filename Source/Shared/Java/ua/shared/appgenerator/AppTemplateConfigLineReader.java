@@ -30,7 +30,7 @@ public class AppTemplateConfigLineReader implements IDataLineReader <AppGenerato
 	
 	
 	
-	public AppTemplateConfigLineReader () {
+	public AppTemplateConfigLineReader() {
 		
 		this.hasError = false;
 	}
@@ -50,7 +50,7 @@ public class AppTemplateConfigLineReader implements IDataLineReader <AppGenerato
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 		
-		incrementLineNumber ();
+		incrementLineNumber();
 		
 
 		if (isIgnoreLine (lineString)) {
@@ -70,19 +70,19 @@ public class AppTemplateConfigLineReader implements IDataLineReader <AppGenerato
 			
 			// Process line...
 			
-			if (StringUtils.isEqual		 (getSectionName (), IAppGeneratorConst.CONFIG_SECTION_COPY_DIR)) {
+			if (StringUtils.isEqual		 (getSectionName(), IAppGeneratorConst.CONFIG_SECTION_COPY_DIR)) {
 				
 				addCopyDirectory (data, lineString);
 			}
-			else if (StringUtils.isEqual (getSectionName (), IAppGeneratorConst.CONFIG_SECTION_CREATE_DIR)) {
+			else if (StringUtils.isEqual (getSectionName(), IAppGeneratorConst.CONFIG_SECTION_CREATE_DIR)) {
 				
 				addCreateDirectory (data, lineString);
 			}
-			else if (StringUtils.isEqual (getSectionName (), IAppGeneratorConst.CONFIG_SECTION_PROCESS_TEMPLATES)) {
+			else if (StringUtils.isEqual (getSectionName(), IAppGeneratorConst.CONFIG_SECTION_PROCESS_TEMPLATES)) {
 				
 				addProcessTemplate (data, lineString);
 			}
-			else if (StringUtils.isEqual (getSectionName (), IAppGeneratorConst.CONFIG_SECTION_TAGS)) {
+			else if (StringUtils.isEqual (getSectionName(), IAppGeneratorConst.CONFIG_SECTION_TAGS)) {
 				
 				addTag (data, lineString);
 			}
@@ -111,7 +111,7 @@ public class AppTemplateConfigLineReader implements IDataLineReader <AppGenerato
 
 		if (nvStringPair != null)
 			
-			data.getDirectoryCopyNVList ().add (nvStringPair);
+			data.getDirectoryCopyNVList().add (nvStringPair);
 		
 		else
 			
@@ -137,7 +137,7 @@ public class AppTemplateConfigLineReader implements IDataLineReader <AppGenerato
 
 		if (CollectionUtils.isNonEmpty (lineList))
 			
-			data.getDirectoryCreateStringList ().add (lineList.get (0));
+			data.getDirectoryCreateStringList().add (lineList.get (0));
 			
 		else
 			
@@ -163,7 +163,7 @@ public class AppTemplateConfigLineReader implements IDataLineReader <AppGenerato
 
 		if (nvStringPair != null)
 			
-			data.getTemplateNVList ().add (nvStringPair);
+			data.getTemplateNVList().add (nvStringPair);
 		
 		else
 			
@@ -197,13 +197,13 @@ public class AppTemplateConfigLineReader implements IDataLineReader <AppGenerato
 	}
 	
 	
-	public ExceptionValidation getExceptionValidation () {
+	public ExceptionValidation getExceptionValidation() {
 		
 		return this.exceptionVal;
 	}
 	
 	
-	public long getLineCount () {
+	public long getLineCount() {
 		
 		return this.lineNumber;
 	}
@@ -241,7 +241,7 @@ public class AppTemplateConfigLineReader implements IDataLineReader <AppGenerato
 
 		if (CollectionUtils.isNonEmpty (lineList))
 			
-			if (lineList.size () >= 2)
+			if (lineList.size() >= 2)
 
 				// If 2 or more, return nv pair. Ignore extras.
 				
@@ -258,7 +258,7 @@ public class AppTemplateConfigLineReader implements IDataLineReader <AppGenerato
 	 * 
 	 * @return
 	 */
-	private String getSectionName () {
+	private String getSectionName() {
 		
 		return this.currentSectionName;
 	}
@@ -270,13 +270,13 @@ public class AppTemplateConfigLineReader implements IDataLineReader <AppGenerato
 	 * 
 	 * @return
 	 */
-	public boolean hasError () {
+	public boolean hasError() {
 		
 		return this.hasError;
 	}
 	
 	
-	private void incrementLineNumber () {
+	private void incrementLineNumber() {
 		
 		this.lineNumber ++;
 	}
@@ -291,7 +291,7 @@ public class AppTemplateConfigLineReader implements IDataLineReader <AppGenerato
 	 */
 	private boolean isSectionHeader (String lineString) {
 		
-		return (StringUtils.isStartsWith (lineString, HEADER_OPEN_CHAR) && StringUtils.isEndsWith (lineString, HEADER_CLOSE_CHAR) && lineString.length () > 2);
+		return (StringUtils.isStartsWith (lineString, HEADER_OPEN_CHAR) && StringUtils.isEndsWith (lineString, HEADER_CLOSE_CHAR) && lineString.length() > 2);
 	}
 	
 	
@@ -319,6 +319,6 @@ public class AppTemplateConfigLineReader implements IDataLineReader <AppGenerato
 	 */
 	private void setSectionName (String lineString) {
 		
-		this.currentSectionName = lineString.substring (1, lineString.length () -1);
+		this.currentSectionName = lineString.substring (1, lineString.length() -1);
 	}
 }

@@ -11,11 +11,11 @@ public class Address implements IAddress {
 	private String	country			= null;
 	private String	countryCode		= null;
 	
-	public Address () {  }
+	public Address() {  }
 
 	public Address (String street1, String street2, String city, String state, String postCode, String country, String countryCode) {
 
-		super ();
+		super();
 		this.street1 = street1;
 		this.street2 = street2;
 		this.city = city;
@@ -26,7 +26,7 @@ public class Address implements IAddress {
 	}
 
 	
-	public String getStreet1 () {
+	public String getStreet1() {
 	
 		return street1;
 	}
@@ -38,7 +38,7 @@ public class Address implements IAddress {
 	}
 
 	
-	public String getStreet2 () {
+	public String getStreet2() {
 	
 		return street2;
 	}
@@ -50,7 +50,7 @@ public class Address implements IAddress {
 	}
 
 	
-	public String getCity () {
+	public String getCity() {
 	
 		return city;
 	}
@@ -62,7 +62,7 @@ public class Address implements IAddress {
 	}
 
 	
-	public String getState () {
+	public String getState() {
 	
 		return state;
 	}
@@ -74,7 +74,7 @@ public class Address implements IAddress {
 	}
 
 	
-	public String getPostCode () {
+	public String getPostCode() {
 	
 		return postCode;
 	}
@@ -86,7 +86,7 @@ public class Address implements IAddress {
 	}
 
 	
-	public String getCountry () {
+	public String getCountry() {
 	
 		return country;
 	}
@@ -98,7 +98,7 @@ public class Address implements IAddress {
 	}
 
 	
-	public String getCountryCode () {
+	public String getCountryCode() {
 	
 		return countryCode;
 	}
@@ -110,17 +110,17 @@ public class Address implements IAddress {
 	}
 
 
-	public int hashCode () {
+	public int hashCode() {
 
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ( (city == null) ? 0 : city.hashCode ());
-		result = prime * result + ( (country == null) ? 0 : country.hashCode ());
-		result = prime * result + ( (countryCode == null) ? 0 : countryCode.hashCode ());
-		result = prime * result + ( (postCode == null) ? 0 : postCode.hashCode ());
-		result = prime * result + ( (state == null) ? 0 : state.hashCode ());
-		result = prime * result + ( (street1 == null) ? 0 : street1.hashCode ());
-		result = prime * result + ( (street2 == null) ? 0 : street2.hashCode ());
+		result = prime * result + ( (city == null) ? 0 : city.hashCode());
+		result = prime * result + ( (country == null) ? 0 : country.hashCode());
+		result = prime * result + ( (countryCode == null) ? 0 : countryCode.hashCode());
+		result = prime * result + ( (postCode == null) ? 0 : postCode.hashCode());
+		result = prime * result + ( (state == null) ? 0 : state.hashCode());
+		result = prime * result + ( (street1 == null) ? 0 : street1.hashCode());
+		result = prime * result + ( (street2 == null) ? 0 : street2.hashCode());
 		return result;
 	}
 
@@ -131,7 +131,7 @@ public class Address implements IAddress {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass () != obj.getClass ())
+		if (getClass() != obj.getClass())
 			return false;
 		Address other = (Address) obj;
 		if (city == null) {

@@ -77,17 +77,17 @@ public class StringParser {
 		// Code:
 		/////////////////////////////////////////////////////////
 
-		resultStringList	= new StringList ();
+		resultStringList	= new StringList();
 		
 		if (StringUtils.isNonEmpty (text)) {
 			
-			segmentStringBuilder = new StringBuilder ();
+			segmentStringBuilder = new StringBuilder();
 			
 			// Loop through all characters...
 			
 			while (segmentIndexCurrent < text.length()) {
 				
-				if (this.escapeCharacter > 0 && this.escapeCharacter == text.charAt (segmentIndexCurrent) && segmentIndexCurrent < text.length () -1) {
+				if (this.escapeCharacter > 0 && this.escapeCharacter == text.charAt (segmentIndexCurrent) && segmentIndexCurrent < text.length() -1) {
 					
 					// Escape character found...
 					
@@ -150,7 +150,7 @@ public class StringParser {
 						if (segmentStringBuilder.length() > 0) {
 							
 							resultStringList.add (segmentStringBuilder.toString());
-							segmentStringBuilder = new StringBuilder ();
+							segmentStringBuilder = new StringBuilder();
 						}
 						else if (! this.isSkipEmptySegments) {
 							

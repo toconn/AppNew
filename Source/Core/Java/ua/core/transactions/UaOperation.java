@@ -22,32 +22,32 @@ public class UaOperation {
 	ArrayList <Message>			messageList			= null;
 	
 	
-	public UaOperation () {
+	public UaOperation() {
 		
-		init ();
+		init();
 	}
 	public UaOperation (UaUser user) {
 		
-		init ();
+		init();
 		
 		this.user = user;
 	}
 	
 	
-	public ArrayList <ExceptionBase> getErrorList () {
+	public ArrayList <ExceptionBase> getErrorList() {
 	
 		return errorList;
 	}
 	
 	
-	public ArrayList <Message> getMessageList () {
+	public ArrayList <Message> getMessageList() {
 	
 		return messageList;
 	}
 	
 	
 	@SuppressWarnings ("rawtypes")
-	public UaMap getRequestMap () {
+	public UaMap getRequestMap() {
 	
 		return requestMap;
 	}
@@ -55,21 +55,21 @@ public class UaOperation {
 
 	
 	@SuppressWarnings ("rawtypes")
-	public UaMap getResponseMap () {
+	public UaMap getResponseMap() {
 	
 		return responseMap;
 	}
 
 
 	
-	public IUaTransaction getTransaction () {
+	public IUaTransaction getTransaction() {
 	
 		return transaction;
 	}
 
 
 	
-	public UaUser getUser () {
+	public UaUser getUser() {
 	
 		return user;
 	}
@@ -77,28 +77,28 @@ public class UaOperation {
 
 	
 	@SuppressWarnings ("rawtypes")
-	private void init () {
+	private void init() {
 		
 		
-		requestMap	= new UaMap ();
-		responseMap	= new UaMap ();
+		requestMap	= new UaMap();
+		responseMap	= new UaMap();
 		
-		errorList	= new ArrayList <ExceptionBase> ();
-		messageList	= new ArrayList <Message> ();
+		errorList	= new ArrayList <ExceptionBase>();
+		messageList	= new ArrayList <Message>();
 	}
 
 
 	
-	public boolean isErrors () {
+	public boolean isErrors() {
 		
-		return ! this.errorList.isEmpty ();
+		return ! this.errorList.isEmpty();
 	}
 
 	
 	
-	public boolean isMessages () {
+	public boolean isMessages() {
 		
-		return ! this.messageList.isEmpty ();	
+		return ! this.messageList.isEmpty();	
 	}
 
 	

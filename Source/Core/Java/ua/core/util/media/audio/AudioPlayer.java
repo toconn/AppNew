@@ -35,7 +35,7 @@ public class AudioPlayer {
 			listener			= new AudioListener();
 			audioInputStream	= AudioSystem.getAudioInputStream (file);
 			
-			audioClip			= AudioSystem.getClip ();
+			audioClip			= AudioSystem.getClip();
 
 			audioClip.addLineListener (listener);
 			audioClip.open (audioInputStream);
@@ -44,7 +44,7 @@ public class AudioPlayer {
 		    	
 		    	audioClip.start();
 
-		    	listener.waitUntilDone ();
+		    	listener.waitUntilDone();
 		    }
 		    finally {
 		    	
@@ -69,7 +69,7 @@ public class AudioPlayer {
 
 				try {
 					
-					audioInputStream.close ();
+					audioInputStream.close();
 				}
 				catch (IOException e) {
 
@@ -102,7 +102,7 @@ public class AudioPlayer {
 		// ///////////////////////////////////////////////////////////////
 
 		thread = new AudioPlayerThead (fileName);
-		thread.start ();
+		thread.start();
 	}
 	
 	
@@ -120,7 +120,7 @@ public class AudioPlayer {
 		// ///////////////////////////////////////////////////////////////
 
 		thread = new AudioPlayerThead (file);
-		thread.start ();
+		thread.start();
 	}
 
 }

@@ -36,7 +36,7 @@ public class DefaultLogger implements ILogger {
 	}
 
 	
-	public Locale getLocale () {
+	public Locale getLocale() {
 		
 		return locale;
 	}

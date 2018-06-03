@@ -27,7 +27,7 @@ public class ExceptionInvalidAction extends ExceptionBase {
 		super (messageList);
 	}
 	
-	public Message getExceptionType () {
+	public Message getExceptionType() {
 	
 		return IExceptionConst.MESSAGE_INVALID_ACTION;
 	}

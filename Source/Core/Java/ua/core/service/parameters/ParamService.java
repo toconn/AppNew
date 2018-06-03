@@ -18,7 +18,7 @@ public class ParamService {
 		// Code:
 		//////////////////////////////////////////////////////////////////
 		
-    	errorParamMap = new UaMap <Param> ();
+    	errorParamMap = new UaMap <Param>();
     	
     	for (Param param : paramMap.values()) {
     		
@@ -65,10 +65,10 @@ public class ParamService {
     	
     	paramDefMap			= paramDefPack.getParamDefMap();
     	
-    	paramMap			= new UaMap <Param> ();
+    	paramMap			= new UaMap <Param>();
     	
-    	paramUnnamedList	= new StringList ();
-    	paramInvalidList	= new StringList ();
+    	paramUnnamedList	= new StringList();
+    	paramInvalidList	= new StringList();
     	
     	i = 0;
     	
@@ -93,7 +93,7 @@ public class ParamService {
     				j = 0;
     				i++;
     				
-    				optionList = new StringList ();
+    				optionList = new StringList();
     				
     				while (j < paramDef.subParamCount && i < paramArray.length && ! isNamedParam (paramArray [i], paramDefPack.paramIdentifier)){
     					
@@ -115,7 +115,7 @@ public class ParamService {
     					param = new Param (paramName, optionList.getArray(), paramDef);
     				}
     				
-    				if (! paramDef.subParamsOptional && paramDef.subParamCount != param.getSubparamCount ()) {
+    				if (! paramDef.subParamsOptional && paramDef.subParamCount != param.getSubparamCount()) {
     					
     					param.setError(true);
     				}
@@ -170,7 +170,7 @@ public class ParamService {
     	
     	// Create toStringList...
     	
-    	toStringList = new StringList ();
+    	toStringList = new StringList();
     	
     	for (String paramName: paramNameList) {
     		

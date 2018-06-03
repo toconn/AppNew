@@ -8,19 +8,19 @@ public class GeoLocation implements IGeoLocation {
 	private float	longitude	= 0.0f;
 	
 	
-	public GeoLocation () { }
+	public GeoLocation() { }
 
 
 	public GeoLocation (float latitude, float longitude) {
 
-		super ();
+		super();
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
 
 
 	
-	public float getLatitude () {
+	public float getLatitude() {
 	
 		return latitude;
 	}
@@ -34,7 +34,7 @@ public class GeoLocation implements IGeoLocation {
 
 
 	
-	public float getLongitude () {
+	public float getLongitude() {
 	
 		return longitude;
 	}
@@ -47,7 +47,7 @@ public class GeoLocation implements IGeoLocation {
 	}
 
 
-	public int hashCode () {
+	public int hashCode() {
 
 		final int prime = 31;
 		int result = 1;
@@ -63,7 +63,7 @@ public class GeoLocation implements IGeoLocation {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass () != obj.getClass ())
+		if (getClass() != obj.getClass())
 			return false;
 		GeoLocation other = (GeoLocation) obj;
 		if (Float.floatToIntBits (latitude) != Float.floatToIntBits (other.latitude))

@@ -55,7 +55,7 @@ public class UrlUtils {
 		connectionReader = new BufferedReader (new InputStreamReader (urlConnection.getInputStream()));
 
 		
-		dataBuilder = new StringBuilder ();
+		dataBuilder = new StringBuilder();
 	
 		while ((dataLine = connectionReader.readLine()) != null) {
 

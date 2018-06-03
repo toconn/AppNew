@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Build" default="done">
 
-	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
-
 	<import file="App.Properties.xml" />
-	
-	
-	
-    <path id="classpath">
 
-    	<fileset dir="${LibsShared}" includes="**/*.jar"/>
- 
+    <path id="classpath">
+    		<fileset dir="${LibsShared}" includes="**/*.jar"/>
     </path>
-		
 
 	<target name="clear">
 

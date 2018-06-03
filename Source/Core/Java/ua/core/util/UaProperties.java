@@ -51,7 +51,7 @@ public class UaProperties implements Iterable <NVStringPair> {
 	public UaProperties() {
 		
 		super();
-		propertyMap	 = new UaMap <NVStringPair> ();
+		propertyMap	 = new UaMap <NVStringPair>();
 	}
 	
 	
@@ -195,7 +195,7 @@ public class UaProperties implements Iterable <NVStringPair> {
 	/**
 	 * @return Returns the defaultProperties.
 	 */
-	public UaProperties getDefaultProperties () {
+	public UaProperties getDefaultProperties() {
 	
 		return defaultProperties;
 	}
@@ -204,7 +204,7 @@ public class UaProperties implements Iterable <NVStringPair> {
 	/**
 	 * @return Returns the encryptionController.
 	 */
-	public IEncryptionController getEncryptionController () {
+	public IEncryptionController getEncryptionController() {
 	
 		return encryptionController;
 	}
@@ -246,7 +246,7 @@ public class UaProperties implements Iterable <NVStringPair> {
 	}
 	
 	
-	public int getKeyMaxSize () {
+	public int getKeyMaxSize() {
 		
 		return propertyMap.getKeyMaxLength();
 	}
@@ -441,7 +441,7 @@ public class UaProperties implements Iterable <NVStringPair> {
 	}
 	
 	
-	public ArrayList <NVStringPair> getPropertyNVList () {
+	public ArrayList <NVStringPair> getPropertyNVList() {
 		
 		//////////////////////////////////////////////////////////////////
 		// Declarations
@@ -457,11 +457,11 @@ public class UaProperties implements Iterable <NVStringPair> {
 
 		// Collect Command Data...
 		
-		nvPairList = new ArrayList <NVStringPair> ();
+		nvPairList = new ArrayList <NVStringPair>();
 		
 		for (NVStringPair nvPair : this) {
 			
-			nvPairList.add (nvPair.cloneMe ());
+			nvPairList.add (nvPair.cloneMe());
 		}
 		
 		return nvPairList;		
@@ -484,7 +484,7 @@ public class UaProperties implements Iterable <NVStringPair> {
 		// Code:
 		///////////////////////////////////////////
 		
-		subsetProperties	= new UaProperties ();
+		subsetProperties	= new UaProperties();
 		
 		
 		if (subName != null) {
@@ -691,7 +691,7 @@ public class UaProperties implements Iterable <NVStringPair> {
 	}
 	
 	
-	public UaIterator <NVStringPair> iterator () {
+	public UaIterator <NVStringPair> iterator() {
 		
 
 		//////////////////////////////////////////////////////////////////
@@ -705,7 +705,7 @@ public class UaProperties implements Iterable <NVStringPair> {
 		// Code
 		//////////////////////////////////////////////////////////////////
 
-		iterator = new UaIterator <NVStringPair> ();
+		iterator = new UaIterator <NVStringPair>();
 		
 		for (String propertyKey : propertyMap.getSortedKeyList()) {
 			
@@ -1009,7 +1009,7 @@ public class UaProperties implements Iterable <NVStringPair> {
 	
 	public void setProperty (NVStringPair nvStringPair) {
 		
-		propertyMap.put (nvStringPair.getName (), nvStringPair.cloneMe ());
+		propertyMap.put (nvStringPair.getName(), nvStringPair.cloneMe());
 	}
 	
 	
@@ -1036,13 +1036,13 @@ public class UaProperties implements Iterable <NVStringPair> {
 	}
 	
 	
-	public int size () {
+	public int size() {
 		
 		return propertyMap.size();
 	}
 	
 	
-	public StringList toStringList () {
+	public StringList toStringList() {
 		
 		return toStringList (this.getKeyMaxSize() + 2);
 	}
@@ -1069,7 +1069,7 @@ public class UaProperties implements Iterable <NVStringPair> {
 
     	// Create toStringList...
     	
-    	toStringList = new StringList ();
+    	toStringList = new StringList();
     	
     	for (String paramName: propertyNameList) {
     		

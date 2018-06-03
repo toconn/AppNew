@@ -30,7 +30,7 @@ public class ExceptionNotAuthorized extends ExceptionBase {
 		super (messageList);
 	}
 	
-	public Message getExceptionType () {
+	public Message getExceptionType() {
 	
 		return new Message ("10172", "Not Authorized");
 	}

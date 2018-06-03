@@ -30,9 +30,9 @@ public class NVUtils {
 			
 			for (NVStringPair nvPair: collection)
 				
-				if (StringUtils.getLength (nvPair.getName ()) > maxLength)
+				if (StringUtils.getLength (nvPair.getName()) > maxLength)
 					
-					maxLength = nvPair.getName ().length ();
+					maxLength = nvPair.getName().length();
 		
 		return maxLength;
 	}
@@ -56,7 +56,7 @@ public class NVUtils {
 
 				if (nvIntPairArray[i] != null) {
 
-					if (StringUtils.isEqual (nvIntPairArray[i].getName (), name)) {
+					if (StringUtils.isEqual (nvIntPairArray[i].getName(), name)) {
 
 						return nvIntPairArray[i];
 					}
@@ -87,7 +87,7 @@ public class NVUtils {
 
 				if (nvIntPairArray[i] != null) {
 
-					if (nvIntPairArray[i].getValue () == value) {
+					if (nvIntPairArray[i].getValue() == value) {
 
 						return nvIntPairArray[i];
 					}
@@ -116,7 +116,7 @@ public class NVUtils {
 
 		if (pair != null) {
 
-			return pair.getName ();
+			return pair.getName();
 		}
 
 		return null;
@@ -140,7 +140,7 @@ public class NVUtils {
 
 		if (pair != null) {
 
-			return pair.getValue ();
+			return pair.getValue();
 		}
 
 		return 0;

@@ -10,34 +10,34 @@ public class AppGeneratorInfo {
 	UaProperties	appProperties	= null;
 
 
-	public AppGeneratorInfo () {
+	public AppGeneratorInfo() {
 
-		super ();
+		super();
 	}
 
 
 	public AppGeneratorInfo (String appName, String templateName, UaProperties appProperties) {
 
-		super ();
+		super();
 		this.appName = appName;
 		this.templateName = templateName;
 		this.appProperties = appProperties;
 	}
 
 
-	public String getAppName () {
+	public String getAppName() {
 
 		return appName;
 	}
 
 
-	public UaProperties getAppProperties () {
+	public UaProperties getAppProperties() {
 
 		return appProperties;
 	}
 
 
-	public String getTemplateName () {
+	public String getTemplateName() {
 
 		return templateName;
 	}

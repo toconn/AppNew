@@ -383,7 +383,7 @@ public class IntegerList implements Cloneable, java.io.Serializable, Iterable <I
 	}
 	
 	
-	public String[] getArray () {
+	public String[] getArray() {
 		
 		return toArray();
 	}
@@ -401,7 +401,7 @@ public class IntegerList implements Cloneable, java.io.Serializable, Iterable <I
 	 */
 	public Iterator <Integer> getIterator() {
 	
-		return iterator ();
+		return iterator();
 	}
 	/**
 	 * Searches for the first occurence of the given argument, testing 
@@ -583,7 +583,7 @@ public class IntegerList implements Cloneable, java.io.Serializable, Iterable <I
 	}
 	
 	
-	public void sort () {
+	public void sort() {
 		
 		if (size > 0) {
 			

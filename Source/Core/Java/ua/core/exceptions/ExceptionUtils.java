@@ -24,7 +24,7 @@ public class ExceptionUtils {
 		//   Code
 		// ///////////////////////////////////////////////////////////////
 		
-		stringList	= new StringList ();
+		stringList	= new StringList();
 		
 		if (exception.getOriginalException() != null) {
 			

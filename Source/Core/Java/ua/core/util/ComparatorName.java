@@ -19,9 +19,9 @@ public class ComparatorName implements Comparator <IName> {
 	/**
 	 * 
 	 */
-	public ComparatorName () {
+	public ComparatorName() {
 	
-		super ();
+		super();
 	}
 	
 	public int compare (IName object1, IName object2) {
